@@ -27,10 +27,6 @@ const userSchema = new mongoose.Schema({
 });
 
 userSchema.pre('save', function encryptPassword(next) {
-  // * this -> new document that's gonna be created { username: ..., password: ... etc. }
-  // * hashSync -> turn my password into a hash
-  // * bcrypt.genSaltSync() -> adds a SALT. A salt is an extra string that gets added to the end
-  // * of our hash, making it just a little bit more secure.
   // ! If the password has changed...
   if (this.isModified('password')) {
     // ! Hashing the password

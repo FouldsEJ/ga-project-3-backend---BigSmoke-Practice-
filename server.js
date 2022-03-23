@@ -2,10 +2,12 @@ import express from 'express';
 import { connectToDb } from './db/helper.js';
 import { port } from './config/environment.js';
 import mongoSanitize from 'express-mongo-sanitize';
+import router from './config/router.js';
 
 const app = express();
 app.use(express.json());
 app.use(mongoSanitize());
+app.use('/api', router);
 
 async function runServer() {
   await connectToDb();
