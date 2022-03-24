@@ -23,6 +23,10 @@ async function seed() {
   await connectToDb();
   console.log('Successfully connected to Mongo DB via Mongoose!');
 
+  console.log('Clearing out the DB..');
+  await Places.deleteMany({});
+  await User.deleteMany({});
+
   console.log('Creating users..');
   const [admin, user] = await User.create([adminUser, normalUser]);
   console.log(`Created admin user: ${admin._id}`);

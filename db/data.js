@@ -1,42 +1,37 @@
-const createPlace = (
-  name,
-  description,
-  category,
-  image,
-  lat,
-  long,
-  openingTimes
-) => {
-  return {
-    name: name,
-    description: description,
-    category: category,
-    image: image,
-    lat: lat,
-    long: long,
-    openingTimes: openingTimes,
-  };
+import { getSpreadSheetData } from './spreadsheet.js';
+
+const places = [];
+const createPlace = {
+  name: 'hello',
+  description: '',
+  category: '',
+  image: '',
+  lat: '',
+  long: '',
+  openingTimes: '',
+  price: '',
+  contact: '',
+  likes: '',
 };
 
-const places = [
-  createPlace(
-    'London Eye',
-    'The London Eye is the world largest cantilevered observation wheel. It was conceived and designed by Marks Barfield Architects and was launched in 2000.',
-    'arts/culture',
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/London-Eye-2009.JPG/1200px-London-Eye-2009.JPG',
-    '51.5033° N',
-    ' 0.1196° W',
-    ' 11am-6pm'
-  ),
-  createPlace(
-    'Liberty London',
-    'Liberty is known around the world for its close connection to art and culture, it is most famous for its bold and floral print fabrics.',
-    'shopping',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSm4QxHKoxa36wguz5BBT8k4ej0FzmpErYZw&usqp=CAU',
-    '51.5139° N',
-    '0.1400° W',
-    ' 11am-6pm'
-  ),
-];
+const data = await getSpreadSheetData();
+
+for (let i = 1; i < data.length; i++) {
+  const rowData = data[i];
+  createPlace.name = rowData[0];
+  createPlace.description = rowData[1];
+  createPlace.category = rowData[2];
+  createPlace.image = rowData[3];
+  createPlace.lat = parseFloat(rowData[4]);
+  createPlace.long = parseFloat(rowData[5]);
+  createPlace.openingTimes = rowData[6];
+  createPlace.price = rowData[7];
+  createPlace.contact = rowData[8];
+  createPlace.likes = rowData[9];
+
+  places[i] = { ...createPlace };
+}
+
+console.log('Places 2: ', places);
 
 export default places;
