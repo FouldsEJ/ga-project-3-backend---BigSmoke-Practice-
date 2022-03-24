@@ -22,5 +22,7 @@ router
   .delete(reviewController.deleteReview)
   .router.route('/register')
   .post(usersController.registerUser);
+router.route('/register').post(usersController.registerUser);
+router.route('/login').post(usersController.loginUser);
 
 export default router;
