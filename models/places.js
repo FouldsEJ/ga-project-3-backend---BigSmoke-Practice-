@@ -11,19 +11,9 @@ const reviewSchema = new mongoose.Schema(
 
 const placesSchema = new mongoose.Schema({
   name: { type: String, required: true },
-  description: { type: String, maxlength: 300 },
+  description: { type: String },
   category: {
-    type: String,
-    enum: {
-      values: [
-        'arts/culture',
-        'entertainment',
-        'shopping',
-        'outdoors',
-        'food/drink',
-      ],
-      message: 'Please pick a correct category',
-    },
+    type: Array,
   },
   image: { type: String, required: true },
   lat: { type: String, required: true },

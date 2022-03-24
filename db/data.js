@@ -4,7 +4,7 @@ const places = [];
 const createPlace = {
   name: 'hello',
   description: '',
-  category: '',
+  category: [],
   image: '',
   lat: '',
   long: '',
@@ -20,7 +20,7 @@ for (let i = 1; i < data.length; i++) {
   const rowData = data[i];
   createPlace.name = rowData[0];
   createPlace.description = rowData[1];
-  createPlace.category = rowData[2];
+  createPlace.category = rowData[2].split(' ');
   createPlace.image = rowData[3];
   createPlace.lat = parseFloat(rowData[4]);
   createPlace.long = parseFloat(rowData[5]);
