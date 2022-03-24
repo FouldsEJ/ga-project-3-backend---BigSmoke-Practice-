@@ -6,4 +6,4 @@ const stationSchema = new mongoose.Schema({
   places: [{ type: mongoose.Schema.ObjectId, ref: 'Places' }],
 });
 
-export default ('Station', stationSchema);
+export default mongoose.model('Station', stationSchema);

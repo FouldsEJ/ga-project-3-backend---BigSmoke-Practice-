@@ -1,6 +1,6 @@
 import { getSpreadSheetData } from './spreadsheet.js';
 
-const places = [];
+export const places = [];
 const createPlace = {
   name: 'hello',
   description: '',
@@ -14,11 +14,11 @@ const createPlace = {
   likes: '',
 };
 
-const tubes = [];
+export const tubes = [];
 const createTubes = {
   name: '',
   tubeLine: [],
-  places: '',
+  // places: '',
 };
 
 const tubeLineData = await getSpreadSheetData('TubeLines');
@@ -54,5 +54,3 @@ for (let i = 1; i < placesData.length; i++) {
 }
 
 console.log('Places 2: ', places);
-
-export default places;

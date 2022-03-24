@@ -1,6 +1,6 @@
 import { connectToDb, disconnetDb } from './helper.js';
 
-import { places, stations } from './data.js';
+import { places, tubes } from './data.js';
 import Places from '../models/places.js';
 import User from '../models/user.js';
 import Station from '../models/station.js';
@@ -34,7 +34,7 @@ async function seed() {
   console.log(`Created admin user: ${admin._id}`);
   console.log(`Created normal user: ${user._id}`);
 
-  const seededStations = await Station.create(stations);
+  const seededStations = await Station.create(tubes);
   console.log('These are the stations seeded: ' + seededStations);
 
   const seededPlaces = await Places.create(places);
