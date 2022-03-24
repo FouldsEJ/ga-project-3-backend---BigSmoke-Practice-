@@ -20,9 +20,9 @@ router
 
 router
   .route('/places/:id/reviews/:reviewId')
-  .delete(reviewController.deleteReview)
-  .router.route('/register')
-  .post(usersController.registerUser);
+  .delete(reviewController.deleteReview);
+
+router.route('/register').post(usersController.registerUser);
 router.route('/register').post(usersController.registerUser);
 router.route('/login').post(usersController.loginUser);
 
