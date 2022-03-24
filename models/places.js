@@ -23,6 +23,6 @@ const placesSchema = new mongoose.Schema({
   price: { type: Number },
   contact: { type: String },
   likes: { type: Number },
-  station: { type: mongoose.Schema.ObjectId, ref: 'Station' },
+  station: [{ type: mongoose.Schema.ObjectId, ref: 'Station' }],
 });
 export default mongoose.model('Places', placesSchema);
