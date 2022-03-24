@@ -15,12 +15,12 @@ router.route('/places/:id').get(placesController.getPlaceById);
 
 router
   .route('/places/:id/reviews')
-  .post(reviewController.createReview)
-  .put(reviewController.createReview);
+  .post(secureRoute, reviewController.createReview);
 
 router
   .route('/places/:id/reviews/:reviewId')
-  .delete(reviewController.deleteReview);
+  .delete(reviewController.deleteReview)
+  .put(reviewController.updateReview);
 
 router.route('/register').post(usersController.registerUser);
 router.route('/login').post(usersController.loginUser);
