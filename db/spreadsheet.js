@@ -1,6 +1,6 @@
 import { google } from 'googleapis';
 
-export const getSpreadSheetData = async () => {
+export const getSpreadSheetData = async (sheetId) => {
   try {
     const auth = new google.auth.GoogleAuth({
       keyFile: './credentials.json',
@@ -21,7 +21,7 @@ export const getSpreadSheetData = async () => {
     const getRows = await googleSheets.spreadsheets.values.get({
       auth,
       spreadsheetId,
-      range: 'Sheet1',
+      range: `${sheetId}`,
     });
 
     const rowData = getRows.data.values;

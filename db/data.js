@@ -14,10 +14,31 @@ const createPlace = {
   likes: '',
 };
 
-const data = await getSpreadSheetData();
+const tubes = [];
+const createTubes = {
+  name: '',
+  tubeLine: [],
+  places: '',
+};
 
-for (let i = 1; i < data.length; i++) {
-  const rowData = data[i];
+const tubeLineData = await getSpreadSheetData('TubeLines');
+
+for (let i = 1; i < tubeLineData.length; i++) {
+  const rowData = tubeLineData[i];
+  createTubes.name = rowData[0];
+  createTubes.tubeLine = rowData[1].split(' ');
+
+  tubes[i] = { ...createTubes };
+}
+
+console.log('TUBE DATA: ', tubes);
+
+const placesData = await getSpreadSheetData('Places');
+
+// console.log(placesData);
+
+for (let i = 1; i < placesData.length; i++) {
+  const rowData = placesData[i];
   createPlace.name = rowData[0];
   createPlace.description = rowData[1];
   createPlace.category = rowData[2].split(' ');
