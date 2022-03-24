@@ -13,14 +13,16 @@ router
 
 router.route('/places/:id').get(placesController.getPlaceById);
 
+router.route('/places/:id/likes').post(placesController.addLike);
+
 router
   .route('/places/:id/reviews')
   .post(secureRoute, reviewController.createReview);
 
 router
   .route('/places/:id/reviews/:reviewId')
-  .delete(reviewController.deleteReview)
-  .put(reviewController.updateReview);
+  .delete(secureRoute, reviewController.deleteReview)
+  .put(secureRoute, reviewController.updateReview);
 
 router.route('/register').post(usersController.registerUser);
 router.route('/login').post(usersController.loginUser);

@@ -38,8 +38,22 @@ const createPlace = async (req, res, next) => {
   }
 };
 
+const addLike = async (req, res, next) => {
+  try {
+    const place = await Place.findById(req.params.id);
+
+    if (!place) {
+      res.status(404).send({ message: 'Place not found' });
+    }
+    console.log('Number of likes:', place.likes);
+  } catch (err) {
+    next(err);
+  }
+};
+
 export default {
   getAllPlaces,
   getPlaceById,
   createPlace,
+  addLike
 };
