@@ -1,6 +1,6 @@
 import { connectToDb, disconnetDb } from './helper.js';
 
-import { createPlacesData, tubes } from './data.js';
+import data from './data.js';
 import Places from '../models/places.js';
 import User from '../models/user.js';
 import Station from '../models/station.js';
@@ -10,14 +10,14 @@ const adminUser = {
   username: 'admin',
   email: 'admin@admin.com',
   password: 'password!1',
-  isAdmin: true
+  isAdmin: true,
 };
 
 const normalUser = {
   name: 'user',
   username: 'user',
   email: 'user@user.com',
-  password: 'password!1'
+  password: 'password!1',
 };
 
 export let seededStations = '';
@@ -36,15 +36,15 @@ async function seed() {
   console.log(`Created admin user: ${admin._id}`);
   console.log(`Created normal user: ${user._id}`);
 
-  seededStations = await Station.create(tubes);
+  seededStations = await Station.create(data.stations);
   console.log('These are the stations seeded: ' + seededStations);
 
-  const places = createPlacesData(seededStations).map((p) => ({
-    ...p,
-    likes: []
-  }));
+  // const places = createPlacesData(seededStations).map((p) => ({
+  //   ...p,
+  //   likes: []
+  // }));
 
-  const seededPlaces = await Places.create(places);
+  const seededPlaces = await Places.create(data.places);
   console.log('This are the places seeded: ' + seededPlaces);
 
   await disconnetDb();
