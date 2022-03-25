@@ -40,19 +40,7 @@ async function seed() {
   seededStations = await Station.create(tubes);
   console.log('These are the stations seeded: ' + seededStations);
 
-  // seededStations.filter((item) => {
-  //   console.log('Station Name: ', item.name);
-  // });
-
   const places = createPlacesData(seededStations);
-
-  // let allStationIdsArray = [['ID']];
-  // seededStations.map((item) => {
-  //   let idArray = [item._id];
-  //   allStationIdsArray.push(idArray);
-  // });
-
-  // await addSpreadSheetData(allStationIdsArray);
 
   const seededPlaces = await Places.create(places);
   console.log('This are the places seeded: ' + seededPlaces);

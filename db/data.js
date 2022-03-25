@@ -12,16 +12,17 @@ const createPlace = {
   price: '',
   contact: '',
   likes: '',
-  stationName: '',
-  // stationId: '',
+  stationName: [],
+  stationId: [],
 };
 
 export const tubes = [];
 const createTubes = {
   name: '',
   tubeLine: [],
-  // places: '',
 };
+
+// Create Tube Data - access it first from google spreadsheet
 
 const tubeLineData = await getSpreadSheetData('TubeLines');
 
@@ -35,9 +36,9 @@ for (let i = 1; i < tubeLineData.length; i++) {
 
 console.log('TUBE DATA: ', tubes);
 
-const placesData = await getSpreadSheetData('Places');
+// Create Places Data - access it first from google spreadsheet
 
-// console.log(placesData);
+const placesData = await getSpreadSheetData('Places');
 
 export const createPlacesData = (seededStations) => {
   for (let i = 1; i < placesData.length; i++) {
@@ -52,13 +53,18 @@ export const createPlacesData = (seededStations) => {
     createPlace.price = rowData[7];
     createPlace.contact = rowData[8];
     createPlace.likes = rowData[9];
-    createPlace.stationName = rowData[10];
+    createPlace.stationName = rowData[10].split(', ');
+    createPlace.stationId = [];
 
-    seededStations.filter((item) => {
-      if (createPlace.stationName === item.name) {
-        createPlace.stationId = item._id;
-      }
-    });
+    console.log(createPlace.stationId);
+
+    for (let i = 0; i < createPlace.stationName.length; i++) {
+      seededStations.filter((item) => {
+        if (createPlace.stationName[i] === item.name) {
+          createPlace.stationId[i] = item._id;
+        }
+      });
+    }
 
     places[i] = { ...createPlace };
   }
