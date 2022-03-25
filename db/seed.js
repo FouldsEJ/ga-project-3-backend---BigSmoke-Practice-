@@ -1,9 +1,10 @@
 import { connectToDb, disconnetDb } from './helper.js';
 
-import { places, tubes } from './data.js';
+import { createPlacesData, tubes } from './data.js';
 import Places from '../models/places.js';
 import User from '../models/user.js';
 import Station from '../models/station.js';
+import { addSpreadSheetData } from './spreadsheet.js';
 
 const adminUser = {
   name: 'admin',
@@ -20,6 +21,8 @@ const normalUser = {
   password: 'Password!1',
 };
 
+export let seededStations = '';
+
 async function seed() {
   await connectToDb();
   console.log('Successfully connected to Mongo DB via Mongoose!');
@@ -34,8 +37,22 @@ async function seed() {
   console.log(`Created admin user: ${admin._id}`);
   console.log(`Created normal user: ${user._id}`);
 
-  const seededStations = await Station.create(tubes);
+  seededStations = await Station.create(tubes);
   console.log('These are the stations seeded: ' + seededStations);
+
+  // seededStations.filter((item) => {
+  //   console.log('Station Name: ', item.name);
+  // });
+
+  const places = createPlacesData(seededStations);
+
+  // let allStationIdsArray = [['ID']];
+  // seededStations.map((item) => {
+  //   let idArray = [item._id];
+  //   allStationIdsArray.push(idArray);
+  // });
+
+  // await addSpreadSheetData(allStationIdsArray);
 
   const seededPlaces = await Places.create(places);
   console.log('This are the places seeded: ' + seededPlaces);

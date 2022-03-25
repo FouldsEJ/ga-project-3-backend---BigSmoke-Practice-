@@ -2,7 +2,7 @@ import { getSpreadSheetData } from './spreadsheet.js';
 
 export const places = [];
 const createPlace = {
-  name: 'hello',
+  name: '',
   description: '',
   category: [],
   image: '',
@@ -12,6 +12,8 @@ const createPlace = {
   price: '',
   contact: '',
   likes: '',
+  stationName: '',
+  // stationId: '',
 };
 
 export const tubes = [];
@@ -37,20 +39,31 @@ const placesData = await getSpreadSheetData('Places');
 
 // console.log(placesData);
 
-for (let i = 1; i < placesData.length; i++) {
-  const rowData = placesData[i];
-  createPlace.name = rowData[0];
-  createPlace.description = rowData[1];
-  createPlace.category = rowData[2].split(' ');
-  createPlace.image = rowData[3];
-  createPlace.lat = parseFloat(rowData[4]);
-  createPlace.long = parseFloat(rowData[5]);
-  createPlace.openingTimes = rowData[6];
-  createPlace.price = rowData[7];
-  createPlace.contact = rowData[8];
-  createPlace.likes = rowData[9];
+export const createPlacesData = (seededStations) => {
+  for (let i = 1; i < placesData.length; i++) {
+    const rowData = placesData[i];
+    createPlace.name = rowData[0];
+    createPlace.description = rowData[1];
+    createPlace.category = rowData[2].split(' ');
+    createPlace.image = rowData[3];
+    createPlace.lat = parseFloat(rowData[4]);
+    createPlace.long = parseFloat(rowData[5]);
+    createPlace.openingTimes = rowData[6];
+    createPlace.price = rowData[7];
+    createPlace.contact = rowData[8];
+    createPlace.likes = rowData[9];
+    createPlace.stationName = rowData[10];
 
-  places[i] = { ...createPlace };
-}
+    seededStations.filter((item) => {
+      if (createPlace.stationName === item.name) {
+        createPlace.stationId = item._id;
+      }
+    });
+
+    places[i] = { ...createPlace };
+  }
+
+  return places;
+};
 
 console.log('Places 2: ', places);
