@@ -2,7 +2,7 @@ import { getSpreadSheetData } from './spreadsheet.js';
 
 export const places = [];
 const createPlace = {
-  name: 'hello',
+  name: '',
   description: '',
   category: [],
   image: '',
@@ -12,14 +12,17 @@ const createPlace = {
   price: '',
   contact: '',
   likes: '',
+  stationName: [],
+  stationId: [],
 };
 
 export const tubes = [];
 const createTubes = {
   name: '',
   tubeLine: [],
-  // places: '',
 };
+
+// Create Tube Data - access it first from google spreadsheet
 
 const tubeLineData = await getSpreadSheetData('TubeLines');
 
@@ -33,24 +36,40 @@ for (let i = 1; i < tubeLineData.length; i++) {
 
 console.log('TUBE DATA: ', tubes);
 
+// Create Places Data - access it first from google spreadsheet
+
 const placesData = await getSpreadSheetData('Places');
 
-// console.log(placesData);
+export const createPlacesData = (seededStations) => {
+  for (let i = 1; i < placesData.length; i++) {
+    const rowData = placesData[i];
+    createPlace.name = rowData[0];
+    createPlace.description = rowData[1];
+    createPlace.category = rowData[2].split(' ');
+    createPlace.image = rowData[3];
+    createPlace.lat = parseFloat(rowData[4]);
+    createPlace.long = parseFloat(rowData[5]);
+    createPlace.openingTimes = rowData[6];
+    createPlace.price = rowData[7];
+    createPlace.contact = rowData[8];
+    createPlace.likes = rowData[9];
+    createPlace.stationName = rowData[10].split(', ');
+    createPlace.stationId = [];
 
-for (let i = 1; i < placesData.length; i++) {
-  const rowData = placesData[i];
-  createPlace.name = rowData[0];
-  createPlace.description = rowData[1];
-  createPlace.category = rowData[2].split(' ');
-  createPlace.image = rowData[3];
-  createPlace.lat = parseFloat(rowData[4]);
-  createPlace.long = parseFloat(rowData[5]);
-  createPlace.openingTimes = rowData[6];
-  createPlace.price = rowData[7];
-  createPlace.contact = rowData[8];
-  createPlace.likes = rowData[9];
+    console.log(createPlace.stationId);
 
-  places[i] = { ...createPlace };
-}
+    for (let i = 0; i < createPlace.stationName.length; i++) {
+      seededStations.filter((item) => {
+        if (createPlace.stationName[i] === item.name) {
+          createPlace.stationId[i] = item._id;
+        }
+      });
+    }
+
+    places[i] = { ...createPlace };
+  }
+
+  return places;
+};
 
 console.log('Places 2: ', places);
