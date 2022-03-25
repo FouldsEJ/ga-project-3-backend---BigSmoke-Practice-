@@ -62,7 +62,30 @@ const addLike = async (req, res, next) => {
     if (!place) {
       res.status(404).send({ message: 'Place not found' });
     }
-    console.log('Number of likes:', place.likes);
+
+    place.likes.push(req.currentUser._id);
+    const savedPlace = await place.save();
+
+    return res.status(200).send({ message: savedPlace });
+  } catch (err) {
+    next(err);
+  }
+};
+
+const removeLike = async (req, res, next) => {
+  try {
+    const place = await Place.findById(req.params.id);
+
+    if (!place) {
+      res.status(404).send({ message: 'Place not found' });
+    }
+
+    console.log(place);
+    place.likes.remove(req.currentUser.id);
+    console.log(place);
+    await place.save();
+
+    return res.status(200).send({ message: place });
   } catch (err) {
     next(err);
   }
@@ -73,5 +96,6 @@ export default {
   getPlaceById,
   createPlace,
   addLike,
-  getPlaceByCategory,
+  removeLike,
+  getPlaceByCategory
 };

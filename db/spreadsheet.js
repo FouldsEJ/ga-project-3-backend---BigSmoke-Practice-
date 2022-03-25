@@ -4,7 +4,7 @@ export const getSpreadSheetData = async (sheetId) => {
   try {
     const auth = new google.auth.GoogleAuth({
       keyFile: './credentials.json',
-      scopes: 'https://www.googleapis.com/auth/spreadsheets',
+      scopes: 'https://www.googleapis.com/auth/spreadsheets'
     });
 
     const client = await auth.getClient();
@@ -16,7 +16,7 @@ export const getSpreadSheetData = async (sheetId) => {
     const getRows = await googleSheets.spreadsheets.values.get({
       auth,
       spreadsheetId,
-      range: `${sheetId}`,
+      range: `${sheetId}`
     });
 
     const rowData = getRows.data.values;

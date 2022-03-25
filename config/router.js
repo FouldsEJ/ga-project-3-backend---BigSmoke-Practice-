@@ -16,7 +16,10 @@ router.route('/places/categories').get(placesController.getPlaceByCategory);
 
 router.route('/places/:id').get(placesController.getPlaceById);
 
-router.route('/places/:id/likes').post(placesController.addLike);
+router
+  .route('/places/:id/likes')
+  .post(secureRoute, placesController.addLike)
+  .delete(secureRoute, placesController.removeLike);
 
 router
   .route('/places/:id/reviews')

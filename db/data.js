@@ -13,13 +13,13 @@ const createPlace = {
   contact: '',
   likes: '',
   stationName: [],
-  stationId: [],
+  stationId: []
 };
 
 export const tubes = [];
 const createTubes = {
   name: '',
-  tubeLine: [],
+  tubeLine: []
 };
 
 // Create Tube Data - access it first from google spreadsheet
