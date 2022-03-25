@@ -17,7 +17,7 @@ const normalUser = {
   name: 'user',
   username: 'user',
   email: 'user@user.com',
-  password: 'Password!1',
+  password: 'password!1',
 };
 
 async function seed() {

@@ -9,7 +9,7 @@ const createReview = async (req, res, next) => {
     }
     const newReview = {
       ...req.body,
-      createdBy: req.currentUser._id
+      createdBy: req.currentUser._id,
     };
     place.reviews.push(newReview);
     const savedReview = await place.save();
@@ -52,7 +52,7 @@ const updateReview = async (req, res, next) => {
       return res.status(404).send({ message: 'Place not found' });
     }
 
-    const review = place.review.id(reviewId);
+    const review = place.reviews.id(reviewId);
 
     if (!review) {
       return res.status(404).send({ message: 'Review not found' });
@@ -70,5 +70,5 @@ const updateReview = async (req, res, next) => {
 export default {
   createReview,
   deleteReview,
-  updateReview
+  updateReview,
 };

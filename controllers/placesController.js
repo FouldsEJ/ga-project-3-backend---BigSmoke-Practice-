@@ -28,6 +28,23 @@ const getPlaceById = async (req, res, next) => {
   }
 };
 
+const getPlaceByCategory = async (req, res, next) => {
+  try {
+    const categoryType = req.query.category;
+    const places = await Place.find({ category: categoryType });
+    console.log(places);
+    console.log(categoryType);
+
+    if (!categoryType) {
+      return res.status(404).send({ message: 'Category not found' });
+    }
+
+    return res.status(200).json(places);
+  } catch (err) {
+    next(err);
+  }
+};
+
 const createPlace = async (req, res, next) => {
   try {
     const newPlace = await Place.create(req.body);
@@ -55,5 +72,6 @@ export default {
   getAllPlaces,
   getPlaceById,
   createPlace,
-  addLike
+  addLike,
+  getPlaceByCategory,
 };
