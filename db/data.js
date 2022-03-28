@@ -18,7 +18,7 @@ const createPlace = (
     long: long,
     openingTimes: openingTimes,
     contact: contact,
-    stationName: stationName,
+    stationName: stationName
   };
 };
 
@@ -89,6 +89,39 @@ const places = [
     'E-mail : hello@southbankcentre.co.uk Telephone : 020 3879 9555',
     ['Waterloo']
   ),
+  createPlace(
+    'Ruislip Lido',
+    'Ruislip Lido, a 60-acre lake with sandy beaches, is a great place to take the family. Play in the sand, build sand-castles, splash about, and have fun! The fun of the seaside, closer to home.',
+    ['outdoors'],
+    'https://i.ytimg.com/vi/k5fv51HBdKU/maxresdefault.jpg',
+    51.5911,
+    0.4305,
+    '9am - 6pm',
+    'https://www.ruisliplido.co.uk/',
+    ['Northwood Hills']
+  ),
+  createPlace(
+    'Tobacco Docks - Skylight',
+    'Londons most imaginative rooftop bar is located in the heart of East London and promises booths, huts, and tables with flowing drinks and striking views.',
+    ['food/drink'],
+    'https://offloadmedia.feverup.com/secretldn.com/wp-content/uploads/2021/02/13035831/Skylight-2-1024x683.jpg',
+    51.5082,
+    0.0596,
+    '12pm - 10pm',
+    'https://www.skylightbars.com/tobacco-dock',
+    ['Aldgate East']
+  ),
+  createPlace(
+    'Copeland Park & Bussey Building | Peckhams Cultural Quarter',
+    'The residents of Copeland Park make it what it is: a diverse community of artists, small businesses, bars, events, restaurants and cinemas, to name a few',
+    ['food/drink', 'arts/culture', 'entertainment'],
+    'http://www.festivalofplace.co.uk/AcuCustom/Sitename/DAM/142/Copeland_Park_Resizedev_Main.jpg',
+    51.4699,
+    0.0663,
+    '7am - 11pm',
+    'https://www.copelandpark.com/',
+    ['Brixton']
+  )
 ];
 
 const createStation = (name, tubeLine) => {
@@ -99,7 +132,7 @@ const stations = [createStation('Acton Town', ['District', 'Piccadilly'])];
 
 export default {
   places,
-  stations,
+  stations
 };
 
 // import { getSpreadSheetData } from './spreadsheet.js';
