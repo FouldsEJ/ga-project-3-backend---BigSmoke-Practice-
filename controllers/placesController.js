@@ -45,6 +45,17 @@ const getPlaceByCategory = async (req, res, next) => {
   }
 };
 
+const getPopular = async (req, res, next) => {
+  try {
+    const popular = await Place.find().limit(5);
+    console.log(popular);
+
+    return res.status(200).json(popular);
+  } catch (error) {
+    next(error);
+  }
+};
+
 const createPlace = async (req, res, next) => {
   try {
     const newPlace = await Place.create(req.body);
@@ -97,5 +108,6 @@ export default {
   createPlace,
   addLike,
   removeLike,
-  getPlaceByCategory
+  getPlaceByCategory,
+  getPopular,
 };
