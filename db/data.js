@@ -18,7 +18,7 @@ const createPlace = (
     long: long,
     openingTimes: openingTimes,
     contact: contact,
-    stationName: stationName,
+    stationName: stationName
   };
 };
 
@@ -26,7 +26,7 @@ const places = [
   createPlace(
     'Tower Of London',
     "The Tower of London is an internationally famous monument and one of England's most iconic structures.",
-    ['arts / culture'],
+    ['arts/culture'],
     'https://cdn.londonandpartners.com/-/media/images/london/visit/things-to-do/sightseeing/london-attractions/tower-of-london/the-tower-of-london-castle-640x360.jpg',
     51.5081,
     0.0759,
@@ -37,18 +37,17 @@ const places = [
   createPlace(
     'Tate Modern',
     "Britain's national museum of modern and contemporary art from around the world is housed in the former Bankside Power Station on the banks of the Thames. The awe-inspiring Turbine Hall runs the length of the entire building and you can see amazing work for free by artists such as Cézanne, Bonnard, Matisse, Picasso, Rothko, DalÍ­, Pollock, Warhol and Bourgeois.",
-    ['arts / culture'],
+    ['arts/culture'],
     'https://a.cdn-hotels.com/gdcs/production161/d329/1dd2958c-c93e-486a-a7ad-47ceb45995dc.jpg',
     51.5077,
     0.0992,
     '10am - 6pm',
     'Email:  Information@tate.org.uk. Call +44 (0)20 7887 8888',
     ['Southwark']
-  ),
   createPlace(
     'Victoria and Albert Museum',
     " The Victoria and Albert Museum was founded with a mission: to educate designers, manufacturers and the public in art and design. Its origins lie in the Great Exhibition of 1851 – the world's first international display of design and manufacturing.",
-    ['arts / culture'],
+    ['arts/culture'],
     'https://cdn.theculturetrip.com/wp-content/uploads/2018/12/va_exterior_may_2012_c_victoria_and_albert_museum_london_med-e1547138131536-1024x566.jpg',
     51.4966,
     0.1722,
@@ -90,16 +89,13 @@ const places = [
     ['Waterloo']
   ),
 ];
-
-const createStation = (name, tubeLine) => {
-  return { name: name, tubeLine: tubeLine };
 };
 
 const stations = [createStation('Acton Town', ['District', 'Piccadilly'])];
 
 export default {
   places,
-  stations,
+  stations
 };
 
 // import { getSpreadSheetData } from './spreadsheet.js';
