@@ -18,7 +18,7 @@ const createPlace = (
     long: long,
     openingTimes: openingTimes,
     contact: contact,
-    stationName: stationName
+    stationName: stationName,
   };
 };
 
@@ -44,6 +44,7 @@ const places = [
     '10am - 6pm',
     'Email:  Information@tate.org.uk. Call +44 (0)20 7887 8888',
     ['Southwark']
+  ),
   createPlace(
     'Victoria and Albert Museum',
     " The Victoria and Albert Museum was founded with a mission: to educate designers, manufacturers and the public in art and design. Its origins lie in the Great Exhibition of 1851 – the world's first international display of design and manufacturing.",
@@ -89,13 +90,16 @@ const places = [
     ['Waterloo']
   ),
 ];
+
+const createStation = (name, tubeLine) => {
+  return { name: name, tubeLine: tubeLine };
 };
 
 const stations = [createStation('Acton Town', ['District', 'Piccadilly'])];
 
 export default {
   places,
-  stations
+  stations,
 };
 
 // import { getSpreadSheetData } from './spreadsheet.js';
