@@ -29,7 +29,7 @@ const loginUser = async (req, res, next) => {
         .json({ message: 'Unauthorized, passwords do not match' });
     }
     const token = jwt.sign(
-      { userId: user._id, isAdmin: user.isAdmin }, // payload on our token
+      { userId: user._id, isAdmin: user.isAdmin, userName: user.name }, // payload on our token
       secret, // the secret that only the developer knows
       { expiresIn: '6h' } // token expires in 6 hours
     );
@@ -42,5 +42,5 @@ const loginUser = async (req, res, next) => {
 
 export default {
   registerUser,
-  loginUser,
+  loginUser
 };

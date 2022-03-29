@@ -13,7 +13,7 @@ const userSchema = new mongoose.Schema({
     required: [true, 'cannot create user without email'],
     minlength: 5,
     maxlength: 30,
-    validate: (email) => emailRegex.test(email),
+    validate: (email) => emailRegex.test(email)
   },
   password: {
     type: String,
@@ -21,9 +21,9 @@ const userSchema = new mongoose.Schema({
     validate: (password) =>
       /(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(
         password
-      ),
+      )
   },
-  isAdmin: { type: Boolean },
+  isAdmin: { type: Boolean }
 });
 
 userSchema.pre('save', function encryptPassword(next) {

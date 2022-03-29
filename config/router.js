@@ -15,6 +15,8 @@ router
 router.route('/places/categories').get(placesController.getPlaceByCategory);
 router.route('/places/popular').get(placesController.getPopular);
 
+router.route('/places/likes').get(placesController.getPlaceByLike);
+
 router.route('/places/:id').get(placesController.getPlaceById);
 
 router
