@@ -4,10 +4,15 @@ import jwt from 'jsonwebtoken';
 
 const registerUser = async (req, res, next) => {
   try {
-    const newUser = await User.create(req.body);
-    return res.status(201).json(newUser);
+    if (req.body.password !== req.body.passwordConfirmation) {
+      return res.status(422).json({ message: 'Passwords do not match.' });
+    }
+
+    const user = await User.create(req.body);
+    return res.status(201).json(user);
   } catch (err) {
-    next(err);
+    return res.status(404).json(err);
+    // next(err);
   }
 };
 
