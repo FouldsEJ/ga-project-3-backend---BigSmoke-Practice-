@@ -1,8 +1,8 @@
-import Places from '../models/places.js';
+import Place from '../models/places.js';
 
 const createReview = async (req, res, next) => {
   try {
-    const place = await Places.findById(req.params.id);
+    const place = await Place.findById(req.params.id);
 
     if (!place) {
       return res.status(404).send({ message: 'Destination not found' });
@@ -12,8 +12,9 @@ const createReview = async (req, res, next) => {
       createdBy: req.currentUser._id,
     };
     place.reviews.push(newReview);
-    const savedReview = await place.save();
 
+    const savedReview = await place.save();
+    console.log('Saved Review: ', savedReview);
     return res.status(201).json(savedReview);
   } catch (err) {
     next(err);
@@ -23,7 +24,7 @@ const createReview = async (req, res, next) => {
 const deleteReview = async (req, res, next) => {
   try {
     const { id, reviewId } = req.params;
-    const place = await Places.findById(id);
+    const place = await Place.findById(id);
 
     if (!place) {
       return res.status(404).send({ message: 'Destination not found' });
@@ -46,7 +47,7 @@ const deleteReview = async (req, res, next) => {
 const updateReview = async (req, res, next) => {
   try {
     const { id, reviewId } = req.params;
-    const place = await Places.findById(id);
+    const place = await Place.findById(id);
 
     if (!place) {
       return res.status(404).send({ message: 'Place not found' });

@@ -18,7 +18,7 @@ const createPlace = (
     long: long,
     openingTimes: openingTimes,
     contact: contact,
-    stationName: stationName
+    stationName: stationName,
   };
 };
 
@@ -61,8 +61,8 @@ const places = [
     'Covent Garden is a world-class shopping and dining destination attracting food-lovers and fashionistas alike. Buzzing with the excitement of the opera and theatreland, the area boasts some of the best shopping and dining destinations in London West End , from Mulberry to Petersham Nurseries and Balthazar to Frenchie.',
     ['shopping', 'entertainment'],
     'https://vespergroup.co.uk/wp-content/uploads/maxresdefault.jpg',
-    51.5117,
-    0.124,
+    51.51178,
+    -0.123191,
     ' ',
     'Telephone:  0207 240-9921',
     ['Covent Garden']
@@ -121,7 +121,7 @@ const places = [
     '7am - 11pm',
     'https://www.copelandpark.com/',
     ['Brixton']
-  )
+  ),
 ];
 
 const createStation = (name, tubeLine) => {
@@ -132,7 +132,7 @@ const stations = [createStation('Acton Town', ['District', 'Piccadilly'])];
 
 export default {
   places,
-  stations
+  stations,
 };
 
 // import { getSpreadSheetData } from './spreadsheet.js';
