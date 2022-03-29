@@ -128,7 +128,10 @@ const createStation = (name, tubeLine) => {
   return { name: name, tubeLine: tubeLine };
 };
 
-const stations = [createStation('Acton Town', ['District', 'Piccadilly'])];
+const stations = [
+  createStation('Acton Town', ['District', 'Piccadilly']),
+  createStation('Aldgate', ['Metropolitan', 'Circle Line'])
+];
 
 export default {
   places,
