@@ -77,7 +77,7 @@ const addLike = async (req, res, next) => {
     place.likes.push(req.currentUser._id);
     const savedPlace = await place.save();
 
-    return res.status(200).send({ message: savedPlace });
+    return res.status(200).json(savedPlace);
   } catch (err) {
     next(err);
   }
@@ -96,7 +96,7 @@ const removeLike = async (req, res, next) => {
     console.log(place);
     await place.save();
 
-    return res.status(200).send({ message: place });
+    return res.status(200).json(place);
   } catch (err) {
     next(err);
   }
