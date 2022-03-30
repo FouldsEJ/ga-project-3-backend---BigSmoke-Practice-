@@ -17,8 +17,9 @@ router.route('/places/popular').get(placesController.getPopular);
 
 router.route('/places/likes').get(placesController.getPlaceByLike);
 
-router.route('/user').get(usersController.getImage);
-router.route('/images').get(usersController.getAllImages);
+//router.route('/user').get(usersController.getImage);
+//router.route('/images').get(usersController.getAllImages);
+//  .post(usersController.postImage);
 
 router.route('/places/:id').get(placesController.getPlaceById);
 
@@ -38,7 +39,10 @@ router
 
 router.route('/register').post(usersController.registerUser);
 router.route('/login').post(usersController.loginUser);
+router.route('/users').get(usersController.getUsers);
 
+router.route('/user/:id').get(usersController.getUser);
+//router.route('/image').get(usersController.getImage);
 router.route('/stations').get(tubeController.getAllStations);
 
 export default router;

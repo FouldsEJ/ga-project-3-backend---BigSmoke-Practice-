@@ -7,6 +7,8 @@ import uniqueValidator from 'mongoose-unique-validator';
 const userSchema = new mongoose.Schema({
   name: { type: String, required: true },
   username: { type: String, required: true },
+  //image: { type: mongoose.Types.ObjectId, ref: 'Image' },
+  image: { type: String },
   email: {
     type: String,
     unique: [true, 'Email already exists in the database'],
@@ -15,7 +17,7 @@ const userSchema = new mongoose.Schema({
     maxlength: 30,
     validate: (email) => emailRegex.test(email)
   },
-  image: { type: mongoose.Types.ObjectId, ref: 'Image' },
+
   password: {
     type: String,
     required: true,

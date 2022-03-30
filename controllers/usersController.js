@@ -1,5 +1,4 @@
 import User from '../models/user.js';
-import Image from '../models/image.js';
 import { secret } from '../config/environment.js';
 import jwt from 'jsonwebtoken';
 
@@ -50,51 +49,35 @@ const loginUser = async (req, res, next) => {
   }
 };
 
-const getImage = async (req, res, next) => {
+const getUsers = async (req, res, next) => {
   try {
-    const userId = req.query.user;
-    const imageUrl = await Image.findOne({ user: userId });
-    console.log('url: ', imageUrl);
-    console.log('user id: ', userId);
-
-    if (!userId) {
-      return res.status(404).send({ message: 'Category not found' });
+    const users = await User.find();
+    if (!users) {
+      return res.status(404).send({ message: 'No users found' });
     }
 
-    return res.status(200).json(imageUrl);
+    return res.status(200).json(users);
   } catch (err) {
     next(err);
   }
 };
 
-const getAllImages = async (req, res, next) => {
+const getUser = async (req, res, next) => {
   try {
-    const images = await Image.find();
-
-    if (!images) {
-      return res.status(404).send({ message: 'No images found' });
+    const user = await User.findById(req.params.id);
+    if (!user) {
+      return res.status(404).send({ message: 'No users found' });
     }
 
-    return res.status(200).json(images);
+    return res.status(200).json(user);
   } catch (err) {
     next(err);
   }
 };
-
-async function postImage(req, res, next) {
-  const image = req.body;
-  try {
-    const newImage = await Image.create(image);
-    res.status(201).send(newImage);
-  } catch (err) {
-    next(err);
-  }
-}
 
 export default {
   registerUser,
   loginUser,
-  getImage,
-  postImage,
-  getAllImages
+  getUsers,
+  getUser
 };
