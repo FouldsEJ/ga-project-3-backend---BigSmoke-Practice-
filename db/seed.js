@@ -11,14 +11,14 @@ const adminUser = {
   username: 'admin',
   email: 'admin@admin.com',
   password: 'password!1',
-  isAdmin: true
+  isAdmin: true,
 };
 
 const normalUser = {
   name: 'user',
   username: 'user',
   email: 'user@user.com',
-  password: 'password!1'
+  password: 'password!1',
 };
 
 export let seededStations = '';
@@ -40,12 +40,12 @@ async function seed() {
   const images = [
     {
       url: 'https://www.pikpng.com/pngl/m/80-805275_blank-facebook-profile-pic-female-portrait-silhouette-clipart.png',
-      user: admin._id
+      user: admin._id,
     },
     {
       url: 'https://media.istockphoto.com/vectors/male-user-icon-vector-id517998264?k=20&m=517998264&s=612x612&w=0&h=pdEwtkJlZsIoYBVeO2Bo4jJN6lxOuifgjaH8uMIaHTU=',
-      user: user._id
-    }
+      user: user._id,
+    },
   ];
   const profilePictures = await Image.create(images);
 
