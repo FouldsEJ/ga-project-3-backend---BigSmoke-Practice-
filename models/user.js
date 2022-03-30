@@ -10,10 +10,13 @@ const userSchema = new mongoose.Schema({
   email: {
     type: String,
     unique: [true, 'Email already exists in the database'],
-    required: [true, 'cannot create user without email'],
+    required: [true, 'Cannot create user without email'],
     minlength: 5,
     maxlength: 30,
-    validate: (email) => emailRegex.test(email)
+    validate: [
+      (email) => emailRegex.test(email),
+      'Please enter your email address in format yourname@example.com.',
+    ],
   },
   password: {
     type: String,
@@ -21,9 +24,9 @@ const userSchema = new mongoose.Schema({
     validate: (password) =>
       /(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(
         password
-      )
+      ),
   },
-  isAdmin: { type: Boolean }
+  isAdmin: { type: Boolean },
 });
 
 userSchema.pre('save', function encryptPassword(next) {
