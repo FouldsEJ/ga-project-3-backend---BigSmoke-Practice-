@@ -18,6 +18,7 @@ const userSchema = new mongoose.Schema({
       'Please enter your email address in format yourname@example.com.',
     ],
   },
+  image: { type: mongoose.Types.ObjectId, ref: 'Image' },
   password: {
     type: String,
     required: true,

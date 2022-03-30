@@ -17,6 +17,9 @@ router.route('/places/popular').get(placesController.getPopular);
 
 router.route('/places/likes').get(placesController.getPlaceByLike);
 
+router.route('/user').get(usersController.getImage);
+router.route('/images').get(usersController.getAllImages);
+
 router.route('/places/:id').get(placesController.getPlaceById);
 
 router

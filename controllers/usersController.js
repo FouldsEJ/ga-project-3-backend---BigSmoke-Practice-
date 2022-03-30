@@ -1,8 +1,9 @@
 import User from '../models/user.js';
+import Image from '../models/image.js';
 import { secret } from '../config/environment.js';
 import jwt from 'jsonwebtoken';
 
-const registerUser = async (req, res, next) => {
+const registerUser = async (req, res) => {
   try {
     if (req.body.password !== req.body.passwordConfirmation) {
       return res
@@ -36,7 +37,11 @@ const loginUser = async (req, res, next) => {
         .json({ message: 'Unauthorized, passwords do not match' });
     }
     const token = jwt.sign(
-      { userId: user._id, isAdmin: user.isAdmin, userName: user.name }, // payload on our token
+      {
+        userId: user._id,
+        isAdmin: user.isAdmin,
+        userName: user.name,
+      }, // payload on our token
       secret, // the secret that only the developer knows
       { expiresIn: '6h' } // token expires in 6 hours
     );
@@ -47,7 +52,51 @@ const loginUser = async (req, res, next) => {
   }
 };
 
+const getImage = async (req, res, next) => {
+  try {
+    const userId = req.query.user;
+    const imageUrl = await Image.findOne({ user: userId });
+    console.log('url: ', imageUrl);
+    console.log('user id: ', userId);
+
+    if (!userId) {
+      return res.status(404).send({ message: 'Category not found' });
+    }
+
+    return res.status(200).json(imageUrl);
+  } catch (err) {
+    next(err);
+  }
+};
+
+const getAllImages = async (req, res, next) => {
+  try {
+    const images = await Image.find();
+
+    if (!images) {
+      return res.status(404).send({ message: 'No images found' });
+    }
+
+    return res.status(200).json(images);
+  } catch (err) {
+    next(err);
+  }
+};
+
+async function postImage(req, res, next) {
+  const image = req.body;
+  try {
+    const newImage = await Image.create(image);
+    res.status(201).send(newImage);
+  } catch (err) {
+    next(err);
+  }
+}
+
 export default {
   registerUser,
   loginUser,
+  getImage,
+  postImage,
+  getAllImages,
 };
