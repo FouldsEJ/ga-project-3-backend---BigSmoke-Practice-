@@ -320,6 +320,83 @@ const places = [
     'https://www.royalparks.org.uk/parks/richmond-park',
     ['Richmond']
   ),
+  createPlace(
+    'ZSL London Zoo',
+    "London Zoo is the world's oldest scientific zoo. It was opened in London in1828, and was opened to the public in 1847. Today, it houses a collection of 673 species of animals, with 19,289 individuals, making it one of the largest collections in the United Kingdom. It is managed under the aegis of the Zoological Society of London (established in 1826), and is situated at the northern edge of Regent's Park",
+    ['outdoors'],
+    'https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Fsundaytimes%2Fprod%2Fweb%2Fbin%2Fd2bd5da4-b2e7-11ea-a05b-f50ae7bba1d8.jpg?crop=2667%2C1500%2C0%2C0',
+    51.535718,
+    -0.155732,
+    '10am - 5pm',
+    'https://www.zsl.org/zsl-london-zoo',
+    ['Camden Town']
+  ),
+  createPlace(
+    'Backyard Cinema',
+    'Backyard Cinema transports you to new and exciting worlds, to enjoy film like never before. Sink into our giant beanbags and discover a whole new cinema.',
+    ['entertainment'],
+    'https://fever.imgix.net/plan/photo/20788676-7b34-11e6-82b7-069fa96992cb.png?w=550&h=550&auto=format&fm=jpg',
+    51.45820033,
+    -0.1947934167,
+    '2pm - 11pm',
+    'https://backyardcinema.co.uk/',
+    ['East Putney']
+  ),
+  createPlace(
+    'Tate Britain',
+    'Tate Britain presents a landmark group exhibition celebrating 70 years of Caribbean-British art.',
+    ['arts/culture'],
+    'https://img.artrabbit.com/organisations/tate-britain/images/m44qgvdBRcZT/1500x1010/tate-britain-0015489713d13428.jpg',
+    51.490833,
+    -0.127222,
+    '10am - 6pm',
+    'https://www.tate.org.uk/visit/tate-britain?gclid=CjwKCAjwrfCRBhAXEiwAnkmKmTewblHEvj99UgyZ8I-bzqyHHRh9qZQp_bBtwC5STjtoUNfjEAH_mhoCs-AQAvD_BwE',
+    ['Vauxhall', 'Victoria', 'Charing Cross']
+  ),
+  createPlace(
+    'HMS Belfast',
+    'HMS Belfast is the most significant surviving Second World War Royal Navy warship. Since her launch over 80 years ago, she fired some of the first shots at the D-Day landings, served in the Arctic Convoys, and in the Korean War.',
+    ['arts/culture'],
+    'https://www.iwm.org.uk/sites/default/files/styles/text_with_media_desktop_1x/public/2020-02/HMS%20Belfast%20-%20exterior.jpg?itok=ByoH607f',
+    51.506579,
+    -0.081389,
+    '10am - 5pm',
+    'https://www.iwm.org.uk/visits/hms-belfast',
+    ['London Bridge']
+  ),
+  createPlace(
+    'Warner Bros. Studio Tour London - The Making of Harry Potter',
+    'Step on to authentic sets, discover the magic behind spellbinding special effects and explore the behind-the-scenes secrets of the Harry Potter film series. Discover the iconic Hogwarts Great Hall and explore the Forbidden Forest, all before boarding the original Hogwarts Express at Platform 9 ¾ and wandering down Diagon Alley.',
+    ['entertainment'],
+    'https://media.tacdn.com/media/attractions-splice-spp-674x446/06/70/25/9c.jpg',
+    51.69347739,
+    -0.419728313,
+    '8:30am - 10pm',
+    'https://www.wbstudiotour.co.uk/',
+    ['Watford']
+  ),
+  createPlace(
+    'The London Eye',
+    'Enjoy amazing 360-degree views over London from the London Eye, a rotating observation wheel which is 135 metres (443 ft) high.',
+    ['arts/culture', 'entertainment'],
+    'https://media.tacdn.com/media/attractions-splice-spp-674x446/07/82/6f/47.jpg',
+    51.503325,
+    -0.119543,
+    '11am - 6pm',
+    'https://www.londoneye.com/',
+    ['Waterloo', 'Embankment']
+  ),
+  createPlace(
+    'Between the Bridges',
+    'Nestled between the London Eye and Waterloo Bridge, Between The Bridges is a brand new venue with London’s largest outdoor drinking area, plus sensational street food, legendary DJs, mini golf, Colombian throwing game Tejo, themed markets and Drag Brunches.',
+    ['entertainment', 'food/drink'],
+    'https://southbanklondon.com/sites/default/files/2021-06/Between%20the%20Bridges_0.jpg',
+    51.50502967,
+    -0.1179715302,
+    '11am - 11pm',
+    'https://betweenthebridges.co.uk/',
+    ['Embankment', 'Waterloo']
+  ),
 ];
 
 const createStation = (name, tubeLine) => {
