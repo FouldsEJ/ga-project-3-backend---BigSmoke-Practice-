@@ -18,7 +18,7 @@ const createPlace = (
     long: long,
     openingTimes: openingTimes,
     contact: contact,
-    stationName: stationName,
+    stationName: stationName
   };
 };
 
@@ -112,7 +112,7 @@ const places = [
     ['Aldgate East']
   ),
   createPlace(
-    'Copeland Park & Bussey Building | Peckhams Cultural Quarter',
+    'Copeland Park & Bussey Building',
     'The residents of Copeland Park make it what it is: a diverse community of artists, small businesses, bars, events, restaurants and cinemas, to name a few',
     ['food/drink', 'arts/culture', 'entertainment'],
     'http://www.festivalofplace.co.uk/AcuCustom/Sitename/DAM/142/Copeland_Park_Resizedev_Main.jpg',
@@ -164,7 +164,7 @@ const places = [
     -0.179165,
     '6am-sunset',
     'https://www.royalparks.org.uk/parks/kensington-gardens',
-    ['High Street Kensington, Queensway']
+    ['High Street Kensington', 'Queensway']
   ),
   createPlace(
     'Selfridges',
@@ -365,7 +365,7 @@ const places = [
     ['London Bridge']
   ),
   createPlace(
-    'Warner Bros. Studio Tour London - The Making of Harry Potter',
+    'Warner Bros. Studio Tour London',
     'Step on to authentic sets, discover the magic behind spellbinding special effects and explore the behind-the-scenes secrets of the Harry Potter film series. Discover the iconic Hogwarts Great Hall and explore the Forbidden Forest, all before boarding the original Hogwarts Express at Platform 9 ¾ and wandering down Diagon Alley.',
     ['entertainment'],
     'https://media.tacdn.com/media/attractions-splice-spp-674x446/06/70/25/9c.jpg',
@@ -396,7 +396,7 @@ const places = [
     '11am - 11pm',
     'https://betweenthebridges.co.uk/',
     ['Embankment', 'Waterloo']
-  ),
+  )
 ];
 
 const createStation = (name, tubeLine) => {
@@ -405,12 +405,12 @@ const createStation = (name, tubeLine) => {
 
 const stations = [
   createStation('Acton Town', ['District', 'Piccadilly']),
-  createStation('Aldgate', ['Metropolitan', 'Circle Line']),
+  createStation('Aldgate', ['Metropolitan', 'Circle Line'])
 ];
 
 export default {
   places,
-  stations,
+  stations
 };
 
 // import { getSpreadSheetData } from './spreadsheet.js';
