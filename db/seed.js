@@ -72,7 +72,7 @@ async function seed() {
   // console.log('These are the stations seeded: ' + seededStations);
 
   const seededPlaces = await Places.create(data.places);
-  // console.log('This are the places seeded: ' + seededPlaces);
+  console.log('This are the places seeded: ' + seededPlaces);
 
   // // Seeding stations into places and places into stations
   // seededPlaces.map((place) => {
