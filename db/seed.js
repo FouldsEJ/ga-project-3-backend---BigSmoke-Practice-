@@ -69,10 +69,18 @@ async function seed() {
   await User.create([adminUser, normalUser, edwardFoulds, barneyGibson, eve]);
 
   seededStations = await Station.create(data.stations);
-  console.log('These are the stations seeded: ' + seededStations);
+  // console.log('These are the stations seeded: ' + seededStations);
 
   const seededPlaces = await Places.create(data.places);
   console.log('This are the places seeded: ' + seededPlaces);
+
+  // // Seeding stations into places and places into stations
+  // seededPlaces.map((place) => {
+  //   const stationNameArray = place.stationName;
+  //   for (let i = 0; i < stationNameArray; i++) {
+  //     console.log(stationNameArray[i]);
+  //   }
+  // });
 
   await disconnetDb();
   console.log('disconnected!');
