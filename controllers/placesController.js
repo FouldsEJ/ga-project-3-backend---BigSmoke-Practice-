@@ -1,3 +1,4 @@
+import { text } from 'express';
 import Place from '../models/places.js';
 
 const getAllPlaces = async (req, res, next) => {
@@ -37,6 +38,29 @@ const getPlaceByCategory = async (req, res, next) => {
 
     if (!categoryType) {
       return res.status(404).send({ message: 'Category not found' });
+    }
+
+    return res.status(200).json(places);
+  } catch (err) {
+    next(err);
+  }
+};
+
+const getPlaceBySearch = async (req, res, next) => {
+  try {
+    const textSearch = req.query.text;
+    const categorySearch = req.query.category;
+    const stationSearch = req.query.station;
+
+    const places = await Place.find({
+      name: { $regex: textSearch },
+      category: { $regex: categorySearch },
+      stationName: { $regex: stationSearch },
+    });
+    console.log(places);
+
+    if (!places) {
+      return res.status(404).send({ message: 'No places found' });
     }
 
     return res.status(200).json(places);
@@ -161,4 +185,5 @@ export default {
   getPlaceByLike,
   addToItenerary,
   removeFromItenerary,
+  getPlaceBySearch,
 };
