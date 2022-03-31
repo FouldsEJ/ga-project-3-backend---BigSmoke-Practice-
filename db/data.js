@@ -7,7 +7,8 @@ const createPlace = (
   long,
   openingTimes,
   contact,
-  stationName
+  stationName,
+  likes
 ) => {
   return {
     name: name,
@@ -19,6 +20,7 @@ const createPlace = (
     openingTimes: openingTimes,
     contact: contact,
     stationName: stationName,
+    likes: likes,
   };
 };
 
@@ -32,7 +34,8 @@ const places = [
     -0.075949,
     '9am - 5:30pm',
     'https://www.hrp.org.uk/tower-of-london/#gs.v6iy8r',
-    ['Tower Hill']
+    ['Tower Hill'],
+    10
   ),
   createPlace(
     'Tate Modern',
@@ -43,7 +46,8 @@ const places = [
     -0.099356,
     '10am - 6pm',
     'https://www.tate.org.uk/',
-    ['Southwark']
+    ['Southwark'],
+    9
   ),
   createPlace(
     'Victoria and Albert Museum',
@@ -54,7 +58,8 @@ const places = [
     -0.17218,
     '10am - 5:45pm ',
     'https://www.vam.ac.uk/',
-    ['South Kensington']
+    ['South Kensington'],
+    8
   ),
   createPlace(
     'Covent Garden',
@@ -65,7 +70,8 @@ const places = [
     -0.123191,
     'N/A',
     'https://www.coventgarden.london/',
-    ['Covent Garden']
+    ['Covent Garden'],
+    7
   ),
   createPlace(
     'Harrods',
@@ -76,7 +82,8 @@ const places = [
     -0.163234,
     'Monday - Wednesday: 11am - 7pm Thursday - Saturday: 11am - 8pm Sunday: 11.30am - 6pm',
     'https://www.harrods.com/en-gb/',
-    ['Knightsbridge']
+    ['Knightsbridge'],
+    6
   ),
   createPlace(
     'Southbank Centre',
@@ -87,7 +94,8 @@ const places = [
     -0.116043,
     'Mondays and Tuesdays 10am - 6pm Wednesdays - Sundays 10am -   11pm',
     'https://www.southbankcentre.co.uk/',
-    ['Waterloo']
+    ['Waterloo'],
+    5
   ),
   createPlace(
     'Ruislip Lido',
@@ -98,7 +106,8 @@ const places = [
     -0.4323,
     '9am - 6pm',
     'https://www.ruisliplido.co.uk/',
-    ['Northwood Hills']
+    ['Northwood Hills'],
+    4
   ),
   createPlace(
     'Tobacco Docks - Skylight',
@@ -109,7 +118,8 @@ const places = [
     -0.05566977732,
     '12pm - 10pm',
     'https://www.skylightbars.com/tobacco-dock',
-    ['Aldgate East']
+    ['Aldgate East'],
+    3
   ),
   createPlace(
     'Copeland Park & Bussey Building',
@@ -142,7 +152,8 @@ const places = [
     -0.176367,
     '10am - 5:50pm',
     'https://www.nhm.ac.uk/',
-    ['South Kensington']
+    ['South Kensington'],
+    11
   ),
   createPlace(
     'The British Museum',

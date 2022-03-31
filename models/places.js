@@ -4,7 +4,7 @@ const reviewSchema = new mongoose.Schema(
   {
     comment: { type: String, required: true, maxlength: 300 },
     rating: { type: Number, required: true, min: 1, max: 5 },
-    createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
+    createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
   },
   { timestamps: true }
 );
@@ -13,7 +13,7 @@ const placesSchema = new mongoose.Schema({
   name: { type: String, required: true },
   description: { type: String },
   category: {
-    type: Array
+    type: Array,
   },
   image: { type: String, required: true },
   lat: { type: Number, required: true },
@@ -22,9 +22,9 @@ const placesSchema = new mongoose.Schema({
   openingTimes: { type: String },
   price: { type: Number },
   contact: { type: String },
-  likes: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
+  likes: { type: Number },
   stationName: [{ type: String }],
   stationId: [{ type: mongoose.Schema.ObjectId, ref: 'Station' }],
-  itenerary: [{ type: mongoose.Schema.ObjectId, ref: 'User' }]
+  itenerary: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
 });
 export default mongoose.model('Place', placesSchema);

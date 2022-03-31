@@ -88,7 +88,7 @@ const getPlaceByLike = async (req, res, next) => {
 
 const getPopular = async (req, res, next) => {
   try {
-    const popular = await Place.find().limit(5);
+    const popular = await Place.find().sort({ likes: -1 }).limit(7);
     console.log(popular);
 
     return res.status(200).json(popular);
