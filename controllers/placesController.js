@@ -119,6 +119,37 @@ const removeLike = async (req, res, next) => {
   }
 };
 
+const addToItenerary = async (req, res, next) => {
+  try {
+    const place = await Place.findById(req.params.id);
+
+    if (!place) {
+      res.status(404).send({ message: 'Place not found' });
+    }
+
+    place.itenerary.push(req.currentUser._id);
+    const savedPlace = await place.save();
+    return res.status(200).json(savedPlace);
+  } catch (error) {
+    next(error);
+  }
+};
+
+const removeFromItenerary = async (req, res, next) => {
+  try {
+    const place = await Place.findById(req.params.id);
+
+    if (!place) {
+      res.status(404).send({ message: 'Place not found' });
+    }
+    place.itenerary.remove(req.currentUser.id);
+    await place.save();
+    return res.status(200).json(place);
+  } catch (error) {
+    next(error);
+  }
+};
+
 export default {
   getAllPlaces,
   getPlaceById,
@@ -127,5 +158,7 @@ export default {
   removeLike,
   getPlaceByCategory,
   getPopular,
-  getPlaceByLike
+  getPlaceByLike,
+  addToItenerary,
+  removeFromItenerary,
 };

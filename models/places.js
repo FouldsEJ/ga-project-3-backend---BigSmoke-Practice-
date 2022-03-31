@@ -25,5 +25,6 @@ const placesSchema = new mongoose.Schema({
   likes: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
   stationName: [{ type: String }],
   stationId: [{ type: mongoose.Schema.ObjectId, ref: 'Station' }],
+  itenerary: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
 });
 export default mongoose.model('Place', placesSchema);

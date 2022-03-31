@@ -25,6 +25,14 @@ const normalUser = {
   password: 'password!1',
 };
 
+const eve = {
+  name: 'eve',
+  username: 'eve',
+  image:
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZsZWtx4wKRP6qNe8JrOShIdswJIR7jhtDCA&usqp=CAU',
+  email: 'eve@eve.com',
+};
+
 const edwardFoulds = {
   name: 'Edward Foulds',
   username: 'efoulds1',
@@ -56,22 +64,11 @@ async function seed() {
   //await Image.deleteMany({});
 
   console.log('Creating users..');
-  const [admin, user] = await User.create([
-    adminUser,
-    normalUser,
-    edwardFoulds,
-    barneyGibson,
-  ]);
-  console.log(`Created admin user: ${admin._id}`);
-  console.log(`Created normal user: ${user._id}`);
+
+  await User.create([adminUser, normalUser, edwardFoulds, barneyGibson, eve]);
 
   seededStations = await Station.create(data.stations);
   // console.log('These are the stations seeded: ' + seededStations);
-
-  // const places = createPlacesData(seededStations).map((p) => ({
-  //   ...p,
-  //   likes: []
-  // }));
 
   const seededPlaces = await Places.create(data.places);
   // console.log('This are the places seeded: ' + seededPlaces);
