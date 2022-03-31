@@ -25,12 +25,29 @@ const normalUser = {
   password: 'password!1',
 };
 
-const user1 = {
+const eve = {
   name: 'eve',
   username: 'eve',
   image:
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZsZWtx4wKRP6qNe8JrOShIdswJIR7jhtDCA&usqp=CAU',
   email: 'eve@eve.com',
+};
+
+const edwardFoulds = {
+  name: 'Edward Foulds',
+  username: 'efoulds1',
+  image:
+    'https://media-exp1.licdn.com/dms/image/C4E03AQFvRuDqaNMLLQ/profile-displayphoto-shrink_400_400/0/1647541273789?e=1654128000&v=beta&t=9JSFarOS45p99ScaMWMmUvL5UkaNkpi9lMRMoCdjqBg',
+  email: 'efoulds@efoulds.com',
+  password: 'password!1',
+};
+
+const barneyGibson = {
+  name: 'Barney Gibson',
+  username: 'bgibson2',
+  image:
+    'https://scontent.flba3-1.fna.fbcdn.net/v/t1.6435-9/56815874_10219223235078828_3618724222798397440_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=YpH-imJkwlQAX-j-rva&_nc_ht=scontent.flba3-1.fna&oh=00_AT_MHTYZt-YuTlNifh8v3VlwZfVOIjV99pgfx4ac7v9Vxg&oe=62692695',
+  email: 'bgibson@bgibson.com',
   password: 'password!1',
 };
 
@@ -47,10 +64,8 @@ async function seed() {
   //await Image.deleteMany({});
 
   console.log('Creating users..');
-  const [admin, user, eve] = await User.create([adminUser, normalUser, user1]);
-  console.log(`Created admin user: ${admin._id}`);
-  console.log(`Created normal user: ${user._id}`);
-  console.log(`Created Eve: ${eve._id}`);
+
+  await User.create([adminUser, normalUser, edwardFoulds, barneyGibson, eve]);
 
   seededStations = await Station.create(data.stations);
   console.log('These are the stations seeded: ' + seededStations);
