@@ -5,6 +5,7 @@ import Places from '../models/places.js';
 import User from '../models/user.js';
 import Station from '../models/station.js';
 //import Image from '../models/image.js';
+
 export let seededStations = '';
 
 async function seed() {
@@ -116,13 +117,7 @@ async function seed() {
     }
   );
   console.log('SUCESSFUL??');
-  // // Seeding stations into places and places into stations
-  // seededPlaces.map((place) => {
-  //   const stationNameArray = place.stationName;
-  //   for (let i = 0; i < stationNameArray; i++) {
-  //     console.log(stationNameArray[i]);
-  //   }
-  // });
+
   //! Seeding stations into places and places into stations
   seededPlaces.map((place) => {
     const stationNameArray = place.stationName;
