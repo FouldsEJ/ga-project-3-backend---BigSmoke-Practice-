@@ -13,7 +13,7 @@ const adminUser = {
     'https://www.pikpng.com/pngl/m/80-805275_blank-facebook-profile-pic-female-portrait-silhouette-clipart.png',
   email: 'admin@admin.com',
   password: 'password!1',
-  isAdmin: true,
+  isAdmin: true
 };
 
 const normalUser = {
@@ -22,7 +22,7 @@ const normalUser = {
   image:
     'https://media.istockphoto.com/vectors/male-user-icon-vector-id517998264?k=20&m=517998264&s=612x612&w=0&h=pdEwtkJlZsIoYBVeO2Bo4jJN6lxOuifgjaH8uMIaHTU=',
   email: 'user@user.com',
-  password: 'password!1',
+  password: 'password!1'
 };
 
 const eve = {
@@ -31,7 +31,7 @@ const eve = {
   image:
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZsZWtx4wKRP6qNe8JrOShIdswJIR7jhtDCA&usqp=CAU',
   email: 'eve@eve.com',
-  password: 'password!1',
+  password: 'password!1'
 };
 
 const edwardFoulds = {
@@ -40,7 +40,7 @@ const edwardFoulds = {
   image:
     'https://media-exp1.licdn.com/dms/image/C4E03AQFvRuDqaNMLLQ/profile-displayphoto-shrink_400_400/0/1647541273789?e=1654128000&v=beta&t=9JSFarOS45p99ScaMWMmUvL5UkaNkpi9lMRMoCdjqBg',
   email: 'efoulds@efoulds.com',
-  password: 'password!1',
+  password: 'password!1'
 };
 
 const barneyGibson = {
@@ -49,7 +49,15 @@ const barneyGibson = {
   image:
     'https://scontent.flba3-1.fna.fbcdn.net/v/t1.6435-9/56815874_10219223235078828_3618724222798397440_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=YpH-imJkwlQAX-j-rva&_nc_ht=scontent.flba3-1.fna&oh=00_AT_MHTYZt-YuTlNifh8v3VlwZfVOIjV99pgfx4ac7v9Vxg&oe=62692695',
   email: 'bgibson@bgibson.com',
-  password: 'password!1',
+  password: 'password!1'
+};
+
+const priya = {
+  name: 'Priya',
+  username: 'Pea75x',
+  image: 'https://ibb.co/F5gybMC',
+  email: 'priya_93_x@hotmail.co.uk',
+  password: 'password!1'
 };
 
 export let seededStations = '';
@@ -66,7 +74,14 @@ async function seed() {
 
   console.log('Creating users..');
 
-  await User.create([adminUser, normalUser, edwardFoulds, barneyGibson, eve]);
+  await User.create([
+    adminUser,
+    normalUser,
+    edwardFoulds,
+    barneyGibson,
+    eve,
+    priya
+  ]);
 
   seededStations = await Station.create(data.stations);
   // console.log('These are the stations seeded: ' + seededStations);
@@ -74,6 +89,20 @@ async function seed() {
   const seededPlaces = await Places.create(data.places);
   console.log('This are the places seeded: ' + seededPlaces);
 
+  await Places.update(
+    { name: 'Tower Of London' },
+
+    {
+      $push: {
+        reviews: {
+          comment: 'hello',
+          rating: 5,
+          createdBy: edwardFoulds._id
+        }
+      }
+    }
+  );
+  console.log('SUCESSFUL??');
   // // Seeding stations into places and places into stations
   // seededPlaces.map((place) => {
   //   const stationNameArray = place.stationName;
