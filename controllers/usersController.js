@@ -76,25 +76,10 @@ const getUser = async (req, res, next) => {
     next(err);
   }
 };
-//! HELP MEEEE
-const postImage = async (req, res, next) => {
-  try {
-    const user = await User.findById(req.params._id);
-
-    user.update({ image: req.body });
-
-    const savedUser = await user.save();
-
-    return res.status(200).json(savedUser);
-  } catch (error) {
-    next(error);
-  }
-};
 
 export default {
   registerUser,
   loginUser,
   getUsers,
-  getUser,
-  postImage
+  getUser
 };
