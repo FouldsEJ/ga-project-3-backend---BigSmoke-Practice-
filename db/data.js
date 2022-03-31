@@ -18,7 +18,7 @@ const createPlace = (
     long: long,
     openingTimes: openingTimes,
     contact: contact,
-    stationName: stationName
+    stationName: stationName,
   };
 };
 
@@ -396,8 +396,27 @@ const places = [
     '11am - 11pm',
     'https://betweenthebridges.co.uk/',
     ['Embankment', 'Waterloo']
-  )
+  ),
 ];
+
+// import { getSpreadSheetData } from './spreadsheet.js';
+
+// const stationsData = await getSpreadSheetData('TubeLines');
+
+// const stations = [];
+// const createStation = (name, tubeLine) => {
+//   return { name: name, tubeLine: tubeLine };
+// };
+
+// for (let i = 1; i < stationsData.length; i++) {
+//   const rowData = stationsData[i];
+//   stations.push(createStation(rowData[0], rowData[1].split('\n')));
+// }
+
+// export default {
+//   places,
+//   stations,
+// };
 
 const createStation = (name, tubeLine) => {
   return { name: name, tubeLine: tubeLine };
@@ -410,43 +429,16 @@ const stations = [
     'Waterloo&City',
     'Bakerloo',
     'Northern',
-    'Jubilee'
+    'Jubilee',
   ]),
-  createStation('London Bridge', ['Northern', 'Jubilee'])
+  createStation('London Bridge', ['Northern', 'Jubilee']),
+  createStation('Embankment', ['District', 'Bakerloo', 'Northern', 'Circle']),
 ];
 
 export default {
   places,
-  stations
+  stations,
 };
-
-// import { getSpreadSheetData } from './spreadsheet.js';
-
-// // const places = [];
-// // const createPlace = {
-// //   name: '',
-// //   description: '',
-// //   category: [],
-// //   image: '',
-// //   lat: null,
-// //   long: null,
-// //   openingTimes: '',
-// //   price: null,
-// //   contact: '',
-// //   likes: [],
-// //   stationName: [],
-// //   stationId: [],
-// // };
-
-// const stations = [];
-// const createStation = {
-//   name: '',
-//   tubeLine: [],
-// };
-
-// // Create Tube Data - access it first from google spreadsheet
-
-// // // Create Places Data - access it first from google spreadsheet
 
 // const placesData = await getSpreadSheetData('Places');
 
