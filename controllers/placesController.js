@@ -115,7 +115,7 @@ const addLike = async (req, res, next) => {
       res.status(404).send({ message: 'Place not found' });
     }
 
-    place.likes.push(req.currentUser._id);
+    place.likes = place.likes + 1;
     const savedPlace = await place.save();
 
     return res.status(200).json(savedPlace);
@@ -132,10 +132,10 @@ const removeLike = async (req, res, next) => {
       res.status(404).send({ message: 'Place not found' });
     }
 
-    console.log(place);
-    place.likes.remove(req.currentUser.id);
-    console.log(place);
-    await place.save();
+    if (place.likes > 0) {
+      place.likes = place.likes - 1;
+      await place.save();
+    }
 
     return res.status(200).json(place);
   } catch (err) {
