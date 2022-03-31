@@ -13,11 +13,11 @@ router
   .post(secureRoute, placesController.createPlace);
 
 router.route('/places/categories').get(placesController.getPlaceByCategory);
+router.route('/places/search').get(placesController.getPlaceBySearch);
 router.route('/places/popular').get(placesController.getPopular);
 
 router.route('/places/likes').get(placesController.getPlaceByLike);
-
-router.route('/image/:id').post(usersController.postImage);
+router.route('/places/itenerary').get(placesController.getPlaceByItenerary);
 
 router.route('/places/:id').get(placesController.getPlaceById);
 
