@@ -116,7 +116,6 @@ async function seed() {
       }
     }
   );
-  console.log('SUCESSFUL??');
 
   //! Seeding stations into places and places into stations
   seededPlaces.map((place) => {
