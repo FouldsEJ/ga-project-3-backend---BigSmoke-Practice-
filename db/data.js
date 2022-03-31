@@ -7,8 +7,7 @@ const createPlace = (
   long,
   openingTimes,
   contact,
-  stationName,
-  stationId
+  stationName
 ) => {
   return {
     name: name,

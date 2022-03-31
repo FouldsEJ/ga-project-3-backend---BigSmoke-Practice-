@@ -31,6 +31,7 @@ const eve = {
   image:
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZsZWtx4wKRP6qNe8JrOShIdswJIR7jhtDCA&usqp=CAU',
   email: 'eve@eve.com',
+  password: 'password!1',
 };
 
 const edwardFoulds = {
