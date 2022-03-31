@@ -27,6 +27,11 @@ router
   .delete(secureRoute, placesController.removeLike);
 
 router
+  .route('/places/:id/itenerary')
+  .post(secureRoute, placesController.addToItenerary)
+  .delete(secureRoute, placesController.removeFromItenerary);
+
+router
   .route('/places/:id/reviews')
   .post(secureRoute, reviewController.createReview);
 
