@@ -55,7 +55,7 @@ const getPlaceBySearch = async (req, res, next) => {
     const places = await Place.find({
       name: { $regex: textSearch },
       category: { $regex: categorySearch },
-      stationName: { $regex: stationSearch },
+      stationName: { $regex: stationSearch }
     });
     console.log(places);
 
@@ -74,6 +74,23 @@ const getPlaceByLike = async (req, res, next) => {
     const userId = req.query.likes;
     const places = await Place.find({ likes: userId });
     console.log(places);
+    console.log(userId);
+
+    if (!userId) {
+      return res.status(404).send({ message: 'user not found' });
+    }
+
+    return res.status(200).json(places);
+  } catch (err) {
+    next(err);
+  }
+};
+
+const getPlaceByItenerary = async (req, res, next) => {
+  try {
+    const userId = req.query.itenerary;
+    const places = await Place.find({ itenerary: userId });
+    console.log(places.length);
     console.log(userId);
 
     if (!userId) {
@@ -174,23 +191,6 @@ const removeFromItenerary = async (req, res, next) => {
   }
 };
 
-const getPlaceByItenerary = async (req, res, next) => {
-  try {
-    const userId = req.query.itenerary;
-    const places = await Place.find({ intenerary: userId });
-    console.log(places);
-    console.log(userId);
-
-    if (!userId) {
-      return res.status(404).send({ message: 'user not found' });
-    }
-
-    return res.status(200).json(places);
-  } catch (err) {
-    next(err);
-  }
-};
-
 export default {
   getAllPlaces,
   getPlaceById,
@@ -203,5 +203,5 @@ export default {
   addToItenerary,
   removeFromItenerary,
   getPlaceBySearch,
-  getPlaceByItenerary,
+  getPlaceByItenerary
 };
