@@ -23,8 +23,8 @@ router.route('/places/:id').get(placesController.getPlaceById);
 
 router
   .route('/places/:id/likes')
-  .post(secureRoute, placesController.addLike)
-  .delete(secureRoute, placesController.removeLike);
+  .post(placesController.addLike)
+  .delete(placesController.removeLike);
 
 router
   .route('/places/:id/itenerary')

@@ -4,9 +4,6 @@ import data from './data.js';
 import Places from '../models/places.js';
 import User from '../models/user.js';
 import Station from '../models/station.js';
-//import Image from '../models/image.js';
-
-export let seededStations = '';
 
 async function seed() {
   await connectToDb();
@@ -16,7 +13,6 @@ async function seed() {
   await Places.deleteMany({});
   await User.deleteMany({});
   await Station.deleteMany({});
-  //await Image.deleteMany({});
 
   console.log('Creating users..');
 
@@ -77,7 +73,7 @@ async function seed() {
   const seededStations = await Station.create(data.stations);
   const seededPlaces = await Places.create(data.places);
 
-  await Places.update(
+  await Places.updateOne(
     { name: 'Tower Of London' },
 
     {
@@ -90,8 +86,20 @@ async function seed() {
       }
     }
   );
+  await Places.updateOne(
+    { name: 'Tower Of London' },
 
-  await Places.update(
+    {
+      $push: {
+        reviews: {
+          comment: 'Great place. Watch out for the creepy man though..',
+          rating: 2,
+          createdBy: barneyGibson._id
+        }
+      }
+    }
+  );
+  await Places.updateOne(
     { name: 'Tate Modern' },
 
     {

@@ -130,7 +130,8 @@ const places = [
     -0.06633347950169306,
     '7am - 11pm',
     'https://www.copelandpark.com/',
-    ['Brixton']
+    ['Brixton'],
+    0
   ),
   createPlace(
     'Madame Tussauds',
@@ -141,7 +142,8 @@ const places = [
     -0.155015,
     '10am- 3pm',
     'https://www.madametussauds.com/',
-    ['Baker Street']
+    ['Baker Street'],
+    0
   ),
   createPlace(
     'Natural History Museum',
@@ -164,7 +166,8 @@ const places = [
     -0.126384,
     '10am - 5:00pm',
     'https://www.bristolmuseums.org.uk/bristol-museum-and-art-gallery/',
-    ['Tottenham Court Road', 'Holborn', 'Russell Square']
+    ['Tottenham Court Road', 'Holborn', 'Russell Square'],
+    0
   ),
   createPlace(
     'Kensington Gardens',
@@ -175,7 +178,8 @@ const places = [
     -0.179165,
     '6am-sunset',
     'https://www.royalparks.org.uk/parks/kensington-gardens',
-    ['High Street Kensington', 'Queensway']
+    ['High Street Kensington', 'Queensway'],
+    0
   ),
   createPlace(
     'Selfridges',
@@ -186,7 +190,8 @@ const places = [
     -0.151971,
     '10am - 9pm',
     'https://www.selfridges.com/GB/en/features/info/stores/london/',
-    ['Bond Street']
+    ['Bond Street'],
+    0
   ),
   createPlace(
     'Spitalfields Market',
@@ -197,7 +202,8 @@ const places = [
     -0.074465,
     '8am–11pm',
     'https://www.spitalfields.co.uk/',
-    ['Liverpool Street', 'Aldgate East']
+    ['Liverpool Street', 'Aldgate East'],
+    0
   ),
   createPlace(
     "St Paul's Cathedral",
@@ -208,7 +214,8 @@ const places = [
     -0.099528,
     '9:30am–4:30pm',
     'https://www.stpauls.co.uk/',
-    ["St. Paul's"]
+    ["St. Paul's"],
+    0
   ),
   createPlace(
     'Borough Market',
@@ -219,7 +226,8 @@ const places = [
     -0.090487,
     '10am–5pm',
     'https://boroughmarket.org.uk/',
-    ['Borough', 'London Bridge']
+    ['Borough', 'London Bridge'],
+    0
   ),
   createPlace(
     'Printworks',
@@ -230,7 +238,8 @@ const places = [
     -0.04366001488,
     'https://printworkslondon.co.uk/',
     'See website for details',
-    ['Canada Water']
+    ['Canada Water'],
+    0
   ),
   createPlace(
     'Fabric',
@@ -241,7 +250,8 @@ const places = [
     -0.1024948302,
     'See website for details',
     'https://www.fabriclondon.com/',
-    ['Farringdon']
+    ['Farringdon'],
+    0
   ),
   createPlace(
     'Kew Gardens',
@@ -252,7 +262,8 @@ const places = [
     -0.291204,
     '10am - 6pm',
     'https://www.kew.org/',
-    ['Kew Gardens']
+    ['Kew Gardens'],
+    0
   ),
   createPlace(
     'Hyde park',
@@ -263,7 +274,8 @@ const places = [
     -0.167996,
     '5am - 12am',
     'https://www.royalparks.org.uk/parks/hyde-park/visitor-information/opening-times-and-getting-here',
-    ['Lancaster', 'Gate', 'Marble Arch', 'Hyde Park Corner', 'Knightsbridge']
+    ['Lancaster', 'Gate', 'Marble Arch', 'Hyde Park Corner', 'Knightsbridge'],
+    0
   ),
   createPlace(
     'Heaven',
@@ -274,7 +286,8 @@ const places = [
     -0.1241430554,
     '10:30am - 5am',
     'https://heaven-live.co.uk/',
-    ['Charing Cross']
+    ['Charing Cross'],
+    0
   ),
   createPlace(
     'Ministry of Sound',
@@ -285,7 +298,8 @@ const places = [
     -0.09958111673,
     '11pm - 6am',
     'https://www.ministryofsound.com/',
-    ['Elephant & Castle']
+    ['Elephant & Castle'],
+    0
   ),
   createPlace(
     'Studio 338',
@@ -296,7 +310,8 @@ const places = [
     0.004763,
     'See website for details',
     'https://www.studio338.co.uk/',
-    ['North Greenwich']
+    ['North Greenwich'],
+    0
   ),
   createPlace(
     'XOYO',
@@ -307,7 +322,8 @@ const places = [
     -0.08562761303,
     'See website for details',
     'https://www.xoyo.co.uk/',
-    ['Old Street']
+    ['Old Street'],
+    0
   ),
   createPlace(
     'The Shard',
@@ -318,7 +334,8 @@ const places = [
     -0.0865,
     '8am-6pm',
     'https://www.the-shard.com/',
-    ['London Bridge']
+    ['London Bridge'],
+    0
   ),
   createPlace(
     'Richmond Park',
@@ -329,7 +346,8 @@ const places = [
     -0.283707,
     '24h',
     'https://www.royalparks.org.uk/parks/richmond-park',
-    ['Richmond']
+    ['Richmond'],
+    0
   ),
   createPlace(
     'ZSL London Zoo',
@@ -340,7 +358,8 @@ const places = [
     -0.155732,
     '10am - 5pm',
     'https://www.zsl.org/zsl-london-zoo',
-    ['Camden Town']
+    ['Camden Town'],
+    0
   ),
   createPlace(
     'Backyard Cinema',
@@ -351,7 +370,8 @@ const places = [
     -0.1947934167,
     '2pm - 11pm',
     'https://backyardcinema.co.uk/',
-    ['East Putney']
+    ['East Putney'],
+    0
   ),
   createPlace(
     'Tate Britain',
@@ -362,7 +382,8 @@ const places = [
     -0.127222,
     '10am - 6pm',
     'https://www.tate.org.uk/visit/tate-britain?gclid=CjwKCAjwrfCRBhAXEiwAnkmKmTewblHEvj99UgyZ8I-bzqyHHRh9qZQp_bBtwC5STjtoUNfjEAH_mhoCs-AQAvD_BwE',
-    ['Vauxhall', 'Victoria', 'Charing Cross']
+    ['Vauxhall', 'Victoria', 'Charing Cross'],
+    0
   ),
   createPlace(
     'HMS Belfast',
@@ -373,7 +394,8 @@ const places = [
     -0.081389,
     '10am - 5pm',
     'https://www.iwm.org.uk/visits/hms-belfast',
-    ['London Bridge']
+    ['London Bridge'],
+    0
   ),
   createPlace(
     'Warner Bros. Studio Tour London',
@@ -384,7 +406,8 @@ const places = [
     -0.419728313,
     '8:30am - 10pm',
     'https://www.wbstudiotour.co.uk/',
-    ['Watford']
+    ['Watford'],
+    0
   ),
   createPlace(
     'The London Eye',
@@ -395,7 +418,8 @@ const places = [
     -0.119543,
     '11am - 6pm',
     'https://www.londoneye.com/',
-    ['Waterloo', 'Embankment']
+    ['Waterloo', 'Embankment'],
+    0
   ),
   createPlace(
     'Between the Bridges',
@@ -406,7 +430,8 @@ const places = [
     -0.1179715302,
     '11am - 11pm',
     'https://betweenthebridges.co.uk/',
-    ['Embankment', 'Waterloo']
+    ['Embankment', 'Waterloo'],
+    0
   ),
   createPlace(
     'Buckingham Palace',
@@ -417,7 +442,8 @@ const places = [
     -0.14189,
     '9am - 5.45pm',
     'https://www.rct.uk/visit/buckingham-palace',
-    ['Hyde Park Corner', 'Green Park']
+    ['Hyde Park Corner', 'Green Park'],
+    0
   ),
   createPlace(
     'Westminster Abbey',
@@ -428,7 +454,8 @@ const places = [
     -0.127405,
     '9.30am - 3.30pm',
     'https://www.westminster-abbey.org/',
-    ['Westminster']
+    ['Westminster'],
+    0
   ),
   createPlace(
     'National Portrait Gallery',
@@ -439,7 +466,8 @@ const places = [
     -0.128569,
     '10am - 6pm',
     'https://www.npg.org.uk/',
-    ['Leicester Square', 'Charing Cross']
+    ['Leicester Square', 'Charing Cross'],
+    0
   ),
   createPlace(
     'The Gherkin',
@@ -450,7 +478,8 @@ const places = [
     -0.08032795906,
     'Open 24 hours',
     'https://www.thegherkinlondon.com/',
-    ['Aldgate', 'Liverpool Street']
+    ['Aldgate', 'Liverpool Street'],
+    0
   ),
   createPlace(
     'Shakespeares Globe Theatre',
@@ -461,7 +490,8 @@ const places = [
     -0.097172543718041,
     '10am - 5pm',
     'https://www.shakespearesglobe.com/?gclid=CjwKCAjwrfCRBhAXEiwAnkmKmfSCKIX72ZSUq1bbx0lAUYsZlO-7HwQMbjjUFIhTnzFspNYi7aknRBoCsxIQAvD_BwE',
-    ['Mansion House', 'London Bridge']
+    ['Mansion House', 'London Bridge'],
+    0
   ),
   createPlace(
     'Kyoto Garden',
@@ -472,7 +502,8 @@ const places = [
     -0.2047438456,
     '7:30am - 8pm',
     'https://www.rbkc.gov.uk/leisure-and-culture/parks/holland-park',
-    ['Holland Park']
+    ['Holland Park'],
+    0
   ),
   createPlace(
     'Hampstead Heath',
@@ -483,7 +514,8 @@ const places = [
     -0.162963059059071,
     'Open 24h',
     'https://www.hampsteadheath.net/',
-    ['Hampstead']
+    ['Hampstead'],
+    0
   ),
   createPlace(
     'Primrose Hill',
@@ -494,7 +526,8 @@ const places = [
     -0.161531543717129,
     'Open 24h',
     'https://www.royalparks.org.uk/parks/the-regents-park/things-to-see-and-do/primrose-hill?gclid=CjwKCAjwrfCRBhAXEiwAnkmKmfpGpv1UfqlwZc6uGUYNNOyxsUnNY8prdfSMA0mroe2T0rtj3Aw_UhoC2aAQAvD_BwE',
-    ['Chalk Farm']
+    ['Chalk Farm'],
+    0
   ),
   createPlace(
     'London Transport Museum ',
@@ -505,7 +538,8 @@ const places = [
     -0.1211357707,
     '10am - 6pm',
     'https://www.ltmuseum.co.uk/visit',
-    ['Covent Garden']
+    ['Covent Garden'],
+    0
   ),
   createPlace(
     'SEA LIFE London Aquarium',
@@ -516,7 +550,8 @@ const places = [
     -0.1194952726,
     '10am - 4pm',
     'https://www.visitsealife.com/london/',
-    ['Westminster']
+    ['Westminster'],
+    0
   ),
   createPlace(
     'The London Dungeon',
@@ -527,7 +562,8 @@ const places = [
     -0.1187520726,
     '11am - 4pm',
     'https://www.thedungeons.com/london/',
-    ['Waterloo']
+    ['Waterloo'],
+    0
   ),
   createPlace(
     'The London Bridge Experience',
@@ -538,7 +574,8 @@ const places = [
     -0.087719043718089,
     '12pm - 6pm',
     'https://www.thelondonbridgeexperience.com/',
-    ['London Bridge']
+    ['London Bridge'],
+    0
   ),
   createPlace(
     'Mercato Metropolitano',
@@ -549,7 +586,8 @@ const places = [
     -0.0983559572114203,
     '12pm - 12am',
     'https://mercatometropolitano.com/',
-    ['Borough', 'Elephant & Castle']
+    ['Borough', 'Elephant & Castle'],
+    0
   ),
   createPlace(
     'Saatchi Gallery',
@@ -560,7 +598,8 @@ const places = [
     -0.159360231527626,
     '10am - 6pm',
     'https://www.saatchigallery.com/',
-    ['Sloane Square']
+    ['Sloane Square'],
+    0
   ),
   createPlace(
     'Serpentine Gallery',
@@ -571,7 +610,8 @@ const places = [
     -0.175040814882504,
     '10am - 6pm ',
     'https://www.royalparks.org.uk/parks/kensington-gardens/things-to-see-and-do/serpentine-galleries?gclid=Cj0KCQjw0PWRBhDKARIsAPKHFGjkmDcstbabSQq-B0ECBKV5lloCpJy062dtwuiGLhUAOhZpHgQNh1waAuayEALw_wcB',
-    'Knightsbridge'
+    ['Knightsbridge'],
+    0
   ),
   createPlace(
     'The Science Museum',
@@ -582,7 +622,8 @@ const places = [
     -0.1767283013896,
     '10am - 6pm',
     'https://www.sciencemuseum.org.uk/home',
-    ['South Kensington', 'Gloucester Road']
+    ['South Kensington', 'Gloucester Road'],
+    0
   ),
   createPlace(
     'Camden Market',
@@ -593,7 +634,8 @@ const places = [
     -0.145425925370444,
     '10am - 6pm',
     'https://www.camdenmarket.com/',
-    ['Camden Town']
+    ['Camden Town'],
+    0
   ),
   createPlace(
     'Churchill War Rooms',
@@ -604,7 +646,8 @@ const places = [
     -0.129314286046963,
     '9:30am - 6pm',
     'https://www.iwm.org.uk/visits/churchill-war-rooms',
-    ['Westminster']
+    ['Westminster'],
+    0
   ),
   createPlace(
     'Madison Rooftop Bar',
@@ -615,7 +658,8 @@ const places = [
     -0.0954314590604008,
     '12pm - 12am',
     'https://www.madisonlondon.net/',
-    ['St. Pauls', 'Mansion House']
+    ['St. Pauls', 'Mansion House'],
+    0
   ),
   createPlace(
     'Tobacco Docks',
@@ -626,7 +670,8 @@ const places = [
     -0.0596320744030728,
     '9am – 5:30pm',
     'https://www.tobaccodocklondon.com/',
-    ['Aldgate East']
+    ['Aldgate East'],
+    0
   ),
   createPlace(
     'London Bridge Rooftop',
@@ -637,7 +682,8 @@ const places = [
     -0.0872109572112087,
     '12pm - 12am',
     'https://www.londonbridgerooftop.com/',
-    ['London Bridge']
+    ['London Bridge'],
+    0
   ),
   createPlace(
     'Skylark Roof Garden',
@@ -648,7 +694,8 @@ const places = [
     -0.182838459060252,
     '12pm - 11pm',
     'https://skylarkroofgarden.co.uk/',
-    ['Paddington']
+    ['Paddington'],
+    0
   ),
   createPlace(
     'Vinegar Yard',
@@ -659,7 +706,8 @@ const places = [
     -0.0835329013894417,
     '12pm - 10pm',
     'https://www.vinegaryard.london/',
-    ['London Bridge']
+    ['London Bridge'],
+    0
   ),
   createPlace(
     'Bussey Rooftop Bar',
@@ -670,7 +718,8 @@ const places = [
     -0.0669211437191465,
     '12pm - 10pm',
     'https://busseyrooftopbar.com/',
-    ['Brixton']
+    ['Brixton'],
+    0
   ),
   createPlace(
     'Bold Tendencies, Franks Cafe',
@@ -681,7 +730,8 @@ const places = [
     -0.0670027590616396,
     '12pm - 11pm',
     'https://boldtendencies.com/franks-cafe/',
-    ['Brixton']
+    ['Brixton'],
+    0
   ),
   createPlace(
     'Pergola Paddington',
@@ -692,7 +742,8 @@ const places = [
     -0.183362201388986,
     '12pm - 11pm',
     'https://www.pergolapaddington.com/',
-    ['Paddington', 'Royal Oak']
+    ['Paddington', 'Royal Oak'],
+    0
   ),
   createPlace(
     'Dalston Roof Park',
@@ -703,7 +754,8 @@ const places = [
     -0.0747202572100412,
     '5pm - 11pm',
     'https://www.bootstrapcharity.com/dalston-roof-park',
-    ['Highbury & Islington']
+    ['Highbury & Islington'],
+    0
   ),
   createPlace(
     'Queen Elizabeth Olympic Park',
@@ -714,50 +766,51 @@ const places = [
     -0.0158786437170114,
     'Open 24 hours',
     'https://www.queenelizabetholympicpark.co.uk/',
-    ['Stratford']
+    ['Stratford'],
+    0
   ),
 ];
 
-// import { getSpreadSheetData } from './spreadsheet.js';
+import { getSpreadSheetData } from './spreadsheet.js';
 
-// const stationsData = await getSpreadSheetData('TubeLines');
+const stationsData = await getSpreadSheetData('TubeLines');
 
-// const stations = [];
-// const createStation = (name, tubeLine) => {
-//   return { name: name, tubeLine: tubeLine };
-// };
-
-// for (let i = 1; i < stationsData.length; i++) {
-//   const rowData = stationsData[i];
-//   stations.push(createStation(rowData[0], rowData[1].split('\n')));
-// }
-
-// export default {
-//   places,
-//   stations,
-// };
-
+const stations = [];
 const createStation = (name, tubeLine) => {
   return { name: name, tubeLine: tubeLine };
 };
 
-const stations = [
-  createStation('Acton Town', ['District', 'Piccadilly']),
-  createStation('Aldgate', ['Metropolitan', 'Circle Line']),
-  createStation('Waterloo', [
-    'Waterloo&City',
-    'Bakerloo',
-    'Northern',
-    'Jubilee',
-  ]),
-  createStation('London Bridge', ['Northern', 'Jubilee']),
-  createStation('Embankment', ['District', 'Bakerloo', 'Northern', 'Circle']),
-];
+for (let i = 1; i < stationsData.length; i++) {
+  const rowData = stationsData[i];
+  stations.push(createStation(rowData[0], rowData[1].split('\n')));
+}
 
 export default {
   places,
   stations,
 };
+
+// const createStation = (name, tubeLine) => {
+//   return { name: name, tubeLine: tubeLine };
+// };
+
+// const stations = [
+//   createStation('Acton Town', ['District', 'Piccadilly']),
+//   createStation('Aldgate', ['Metropolitan', 'Circle Line']),
+//   createStation('Waterloo', [
+//     'Waterloo&City',
+//     'Bakerloo',
+//     'Northern',
+//     'Jubilee',
+//   ]),
+//   createStation('London Bridge', ['Northern', 'Jubilee']),
+//   createStation('Embankment', ['District', 'Bakerloo', 'Northern', 'Circle']),
+// ];
+
+// export default {
+//   places,
+//   stations,
+// };
 
 // const placesData = await getSpreadSheetData('Places');
 
