@@ -90,19 +90,7 @@ async function seed() {
       }
     }
   );
-  await Places.update(
-    { name: 'Tower Of London' },
 
-    {
-      $push: {
-        reviews: {
-          comment: 'Great place. Watch out for the creepy man though..',
-          rating: 2,
-          createdBy: barneyGibson._id
-        }
-      }
-    }
-  );
   await Places.update(
     { name: 'Tate Modern' },
 
