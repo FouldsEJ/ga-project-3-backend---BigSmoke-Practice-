@@ -53,12 +53,12 @@ async function seed() {
     password: 'password!1',
   });
 
-  const barneyGibson = await User.create({
-    name: 'Barney Gibson',
-    username: 'bgibson2',
+  const jimBrown = await User.create({
+    name: 'Jim Brown',
+    username: 'jbrown',
     image:
-      'https://scontent.flba3-1.fna.fbcdn.net/v/t1.6435-9/56815874_10219223235078828_3618724222798397440_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=YpH-imJkwlQAX-j-rva&_nc_ht=scontent.flba3-1.fna&oh=00_AT_MHTYZt-YuTlNifh8v3VlwZfVOIjV99pgfx4ac7v9Vxg&oe=62692695',
-    email: 'bgibson@bgibson.com',
+      'https://files.slack.com/files-pri/T0351JZQ0-F039RC4F0LU/screenshot_2022-04-01_at_09.56.08.png',
+    email: 'jbrown@bgibson.com',
     password: 'password!1',
   });
 
@@ -94,7 +94,7 @@ async function seed() {
         reviews: {
           comment: 'Great place. Watch out for the creepy man though..',
           rating: 2,
-          createdBy: barneyGibson._id,
+          createdBy: jimBrown._id,
         },
       },
     }
