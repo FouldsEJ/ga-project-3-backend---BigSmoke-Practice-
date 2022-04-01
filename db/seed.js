@@ -56,7 +56,7 @@ async function seed() {
     name: 'Jim Brown',
     username: 'jbrown',
     image:
-      'https://files.slack.com/files-pri/T0351JZQ0-F039RC4F0LU/screenshot_2022-04-01_at_09.56.08.png',
+      'https://res.cloudinary.com/pea75x/image/upload/v1648814247/profile-picture/xqj7u3y4r7utay35nzvh.png',
     email: 'jbrown@bgibson.com',
     password: 'password!1',
   });
@@ -100,7 +100,7 @@ async function seed() {
     {
       $push: {
         reviews: {
-          comment: 'Great place. Watch out for the creepy man though..',
+          comment: 'Great place! Delivery for tiddles...',
           rating: 2,
           createdBy: jimBrown._id,
         },
