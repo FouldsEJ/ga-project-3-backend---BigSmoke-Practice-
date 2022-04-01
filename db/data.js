@@ -35,7 +35,7 @@ const places = [
     '9am - 5:30pm',
     'https://www.hrp.org.uk/tower-of-london/#gs.v6iy8r',
     ['Tower Hill'],
-    10
+    11
   ),
   createPlace(
     'Tate Modern',
@@ -617,7 +617,7 @@ const places = [
     'The Science Museum',
     'Interactive and thought-provoking, the Science Museum is a great place to see, touch and experience science first-hand. From space travel to IMAX, there is something for all the family. Free entry.',
     ['arts/culture'],
-    'https://www.sciencemuseum.org.uk/home',
+    'https://upload.wikimedia.org/wikipedia/commons/b/b3/Science_Museum%2C_Exhibition_Road_%28cropped%29.jpg',
     51.4973818816998,
     -0.1767283013896,
     '10am - 6pm',
