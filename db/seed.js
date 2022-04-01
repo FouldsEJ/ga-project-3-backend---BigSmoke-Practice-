@@ -19,8 +19,7 @@ async function seed() {
   const adminUser = await User.create({
     name: 'admin',
     username: 'admin',
-    image:
-      'https://www.pikpng.com/pngl/m/80-805275_blank-facebook-profile-pic-female-portrait-silhouette-clipart.png',
+    image: 'https://cdn-icons-png.flaticon.com/512/2206/2206368.png',
     email: 'admin@admin.com',
     password: 'password!1',
     isAdmin: true,
