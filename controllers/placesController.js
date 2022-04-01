@@ -1,5 +1,6 @@
 import { text } from 'express';
 import Place from '../models/places.js';
+import Station from '../models/station.js';
 
 const getAllPlaces = async (req, res, next) => {
   try {
@@ -53,9 +54,9 @@ const getPlaceBySearch = async (req, res, next) => {
     const stationSearch = req.query.station;
 
     const places = await Place.find({
-      name: { $regex: textSearch },
+      name: new RegExp(textSearch, 'i'),
       category: { $regex: categorySearch },
-      stationName: { $regex: stationSearch }
+      stationName: { $regex: stationSearch },
     });
     console.log(places);
 
@@ -118,7 +119,16 @@ const createPlace = async (req, res, next) => {
   try {
     const newPlace = await Place.create(req.body);
 
-    return res.status(201).json(newPlace);
+    const x = await Station.updateOne(
+      { name: newPlace.stationName },
+      { $push: { places: newPlace._id } }
+    );
+
+    const station = await Station.findOne({ name: newPlace.stationName });
+    newPlace.stationId.push(station._id);
+    const savedPlace = await newPlace.save();
+
+    return res.status(201).json(savedPlace);
   } catch (err) {
     next(err);
   }
@@ -203,5 +213,5 @@ export default {
   addToItenerary,
   removeFromItenerary,
   getPlaceBySearch,
-  getPlaceByItenerary
+  getPlaceByItenerary,
 };
