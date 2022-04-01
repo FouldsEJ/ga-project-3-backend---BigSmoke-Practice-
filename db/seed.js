@@ -70,6 +70,15 @@ async function seed() {
     password: 'password!1',
   });
 
+  const tania = await User.create({
+    name: 'Tania',
+    username: 'Tania',
+    image:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxJeZhb6RExHq40FCStJxdXyDt-8-f0nxMramKZkLKHtmtFKNsrULidcysTtegJEZxWNs&usqp=CAU',
+    email: 'tania@tania.com',
+    password: 'password!1',
+  });
+
   const seededStations = await Station.create(data.stations);
   const seededPlaces = await Places.create(data.places);
 
@@ -108,6 +117,104 @@ async function seed() {
           comment: 'NICEEEEEEEEEE',
           rating: 5,
           createdBy: edwardFoulds._id,
+        },
+      },
+    }
+  );
+
+  await Places.updateOne(
+    { name: 'Tate Modern' },
+    {
+      $push: {
+        reviews: {
+          comment:
+            'Although art is a form of expression I feel like a lot of the artwork is cheating qualitative artwork. Don’t believe this is true art but rather laziness and illusion.',
+          rating: 2,
+          createdBy: eve._id,
+        },
+      },
+    }
+  );
+
+  await Places.updateOne(
+    { name: 'The London Eye' },
+    {
+      $push: {
+        reviews: {
+          comment:
+            'Fantastic view over London but massively overpriced. Could at least have had an audio description of the sights etc.',
+          rating: 3,
+          createdBy: tania._id,
+        },
+      },
+    }
+  );
+
+  await Places.updateOne(
+    { name: 'Covent Garden' },
+    {
+      $push: {
+        reviews: {
+          comment:
+            'We had the pleasure of enjoying violinists performing last week, beautiful weather, great atmosphere, theres the markets to enjoy and some great places to eat.',
+          rating: 5,
+          createdBy: tania._id,
+        },
+      },
+    }
+  );
+
+  await Places.updateOne(
+    { name: 'Southbank Centre' },
+    {
+      $push: {
+        reviews: {
+          comment:
+            'The Southbank Centre is a fantastic space with great events for all ages. The staff are tremedous , and the southbank is stunning in the evenings.',
+          rating: 5,
+          createdBy: priya._id,
+        },
+      },
+    }
+  );
+
+  await Places.updateOne(
+    { name: 'Natural History Museum' },
+    {
+      $push: {
+        reviews: {
+          comment:
+            'You cannot go wrong with free entry. Fantastic way to spend a few hours.',
+          rating: 5,
+          createdBy: eve._id,
+        },
+      },
+    }
+  );
+
+  await Places.updateOne(
+    { name: 'Natural History Museum' },
+    {
+      $push: {
+        reviews: {
+          comment:
+            'I knew this place was big but not THAT big!! The building itself is just bloody beautiful, finest victorian artictecture.',
+          rating: 5,
+          createdBy: tania._id,
+        },
+      },
+    }
+  );
+
+  await Places.updateOne(
+    { name: 'Borough Market' },
+    {
+      $push: {
+        reviews: {
+          comment:
+            'Food heaven! Loved this place, great atmosphere, such a good selection of incredible foods on offer, can’t wait to return',
+          rating: 5,
+          createdBy: tania._id,
         },
       },
     }
